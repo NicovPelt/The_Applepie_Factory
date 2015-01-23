@@ -27,7 +27,7 @@ class Character extends Sprite
 	
 	function init(e:Event) {
 		initTiles();
-		drawCharacter
+		drawCharacter();
 	}
 	
 	function drawCharacter():Void {
@@ -42,7 +42,7 @@ class Character extends Sprite
 		var row:Int = 0;
 		for( i in 0...tiles ){
 			var charRect:Rectangle = new Rectangle( tileWidth * column, tileHeight * row, tileWidth, tileHeight );
-			character.addTileRect( gooseRectangle );
+			character.addTileRect( charRect );
 			row = Math.floor( i / 3 );
 			column = i % 3;
 		}

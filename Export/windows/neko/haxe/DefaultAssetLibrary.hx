@@ -46,11 +46,31 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/img/character/doofus.png", "assets/img/character/doofus.png");
+		type.set ("assets/img/character/doofus.png", AssetType.IMAGE);
+		path.set ("assets/img/character/doofus.psd", "assets/img/character/doofus.psd");
+		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
+		path.set ("img/character/doofus.png", "img/character/doofus.png");
+		type.set ("img/character/doofus.png", AssetType.IMAGE);
+		path.set ("img/character/doofus.psd", "img/character/doofus.psd");
+		type.set ("img/character/doofus.psd", AssetType.BINARY);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/img/character/doofus.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/character/doofus.psd";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "img/character/doofus.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/character/doofus.psd";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
 		
 		
 		#else
@@ -58,9 +78,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		
 		
 		if (useManifest) {
@@ -680,7 +708,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
 #elseif html5
+
+
+
+
 
 
 

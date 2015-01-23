@@ -1,9 +1,9 @@
 -main ApplicationMain 
--cp C:/HaxeToolkit/haxe/lib/openfl/2,1,5
--D openfl=2.1.5
+-cp C:/HaxeToolkit/haxe/lib/openfl/2,2,3
+-D openfl=2.2.3
 -cp Source
--cp C:\HaxeToolkit\haxe\lib\lime/2,0,0-beta/legacy
--D tools=2.0.0-beta
+-cp C:\HaxeToolkit\haxe\lib\lime/2,0,5/legacy
+-D tools=2.0.5
 -D lime-legacy
 -D no-compilation
 -D native

@@ -16,6 +16,14 @@ class AssetData {
 		
 		if (!initialized) {
 			
+			path.set ("assets/img/character/doofus.png", "assets/img/character/doofus.png");
+			type.set ("assets/img/character/doofus.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/character/doofus.psd", "assets/img/character/doofus.psd");
+			type.set ("assets/img/character/doofus.psd", Reflect.field (AssetType, "binary".toUpperCase ()));
+			path.set ("img/character/doofus.png", "img/character/doofus.png");
+			type.set ("img/character/doofus.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("img/character/doofus.psd", "img/character/doofus.psd");
+			type.set ("img/character/doofus.psd", Reflect.field (AssetType, "binary".toUpperCase ()));
 			
 			
 			initialized = true;

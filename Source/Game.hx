@@ -10,11 +10,10 @@ import openfl.events.Event;
  */
 class Game extends Sprite
 {
-
 	public function new() 
 	{
 		super();
-		addEventListener(Event.ADDED_TO_STAGE, init)
+		addEventListener(Event.ADDED_TO_STAGE, init);
 	}
 	
 	//Called when the Game Class is added to the stage by the main class
@@ -24,6 +23,7 @@ class Game extends Sprite
 		addChild(terrain);
 		var vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2));
 		addChild(vehicle);
-		
+		var character:Character = new Character();
+		addChild(character);
 	}
 }
