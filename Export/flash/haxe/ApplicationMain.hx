@@ -76,20 +76,20 @@ class ApplicationMain {
 			borderless: false,
 			depthBuffer: false,
 			fps: Std.int (30),
-			fullscreen: false,
-			height: Std.int (600),
+			fullscreen: true,
+			height: Std.int (1080),
 			orientation: "",
-			resizable: true,
+			resizable: false,
 			stencilBuffer: false,
 			title: "Scrambled",
 			vsync: false,
-			width: Std.int (800),
+			width: Std.int (1920),
 			
 		}
 		
 		#if js
 		#if munit
-		flash.Lib.embed (null, 800, 600, "FFFFFF");
+		flash.Lib.embed (null, 1920, 1080, "FFFFFF");
 		#end
 		#else
 		create ();

@@ -13,6 +13,6 @@
 -D web
 -swf-version 11.2
 -swf Export/flash/bin/Scrambled.swf
--swf-header 800:600:30:FFFFFF
+-swf-header 1920:1080:30:FFFFFF
 -cp Export/flash/haxe
 -debug
