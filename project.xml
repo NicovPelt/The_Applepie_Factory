@@ -8,7 +8,12 @@
 	
 	<haxelib name="openfl" />
 	
+	<window width="1920" height="1080" unless="mobile" />
+	<window fullscreen="true" resizable="false" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
 	<assets path="Assets" rename="assets" exclude="openfl.svg" />
+	<assets path="assets/img" rename="img" />
 	<icon path="Assets/openfl.svg" />
 	
 </project>
