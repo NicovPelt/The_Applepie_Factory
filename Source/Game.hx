@@ -10,13 +10,13 @@ import openfl.events.Event;
  */
 class Game extends Sprite
 {
-	var character:Character = new Character;
-	var vehicle:Vehicle = new Vehicle;
+	var character:Character = new Character();
+	var vehicle:Vehicle;
 
 	public function new() 
 	{
 		super();
-		addEventListener(Event.ADDED_TO_STAGE, init)
+		addEventListener(Event.ADDED_TO_STAGE, init);
 	}
 	
 	//Called when the Game Class is added to the stage by the main class
