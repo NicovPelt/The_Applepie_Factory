@@ -674,9 +674,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_psd extends null { }
 @:keep @:bind #if display private #end class __ASSET__img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep @:bind #if display private #end class __ASSET__img_character_doofus_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__img_character_doofus_psd extends null { }
 
 
 #elseif html5

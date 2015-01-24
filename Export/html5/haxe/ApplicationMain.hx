@@ -93,7 +93,7 @@ class ApplicationMain {
 			background: Std.int (16777215),
 			borderless: false,
 			depthBuffer: false,
-			fps: Std.int (30),
+			fps: Std.int (0),
 			fullscreen: true,
 			height: Std.int (1080),
 			orientation: "",

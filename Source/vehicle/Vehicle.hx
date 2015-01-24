@@ -9,7 +9,7 @@ import openfl.display.Sprite;
 class Vehicle extends Sprite
 {
 	
-	public var platform:Sprite;
+	public var platforms:Array<Sprite>;
 	var terrain:Terrain;
 	var speed:Int = 4;
 	
@@ -17,11 +17,13 @@ class Vehicle extends Sprite
 	{
 		super();
 		
-		platform = new Sprite();
+		platforms = new Array<Sprite>();
 		
 		draw();
 		
-		addChild(platform);
+		for(platform in platforms){
+			addChild(platform);
+		}
 		
 		this.x = xPos;
 		this.y = yPos;
@@ -30,13 +32,23 @@ class Vehicle extends Sprite
 	
 	function draw()
 	{
-		
+		var platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect(100,100,200,10);
+		platform.graphics.drawRect( 0, 0, 20, 100);
+		platform.x = 50;
+		platform.y = 0;
+		platforms.push(platform);
 		
-		graphics.beginFill(0x00ff00);
-		graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
-		graphics.endFill();
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 200, 10);
+		platform.x = -100;
+		platform.y = 100;
+		platforms.push(platform);
+		
+		//graphics.beginFill(0x00ff00);
+		//graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
+		//graphics.endFill();
 	}
 	
 	public function update()

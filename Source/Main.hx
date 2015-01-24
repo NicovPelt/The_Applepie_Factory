@@ -11,7 +11,7 @@ class Main extends Sprite {
 	public function new () {
 		
 		super ();
-
+		
 		game = new Game();
 		addChild(game);
 		update();

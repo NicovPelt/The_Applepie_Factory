@@ -28,7 +28,8 @@ class Game extends Sprite
 		addChild(terrain);
 		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
 		addChild(vehicle);
-		character = new Character(1);
+		character = new Character(1, vehicle);
+		
 		addChild(character);
 		inited = true;
 	}
@@ -37,8 +38,9 @@ class Game extends Sprite
 	{
 		if (inited)
 		{
-		terrain.update();	
-		vehicle.update();
+			terrain.update();	
+			vehicle.update();
+			character.update();
 		}
 	}
 }
