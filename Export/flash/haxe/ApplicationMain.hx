@@ -103,6 +103,10 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("audio/GGJ_Maintheme.mp3");
+		types.push (AssetType.MUSIC);
+		
+		
 		
 		preloader.load (urls, types);
 		#end

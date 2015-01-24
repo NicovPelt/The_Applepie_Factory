@@ -82,6 +82,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/character/doofusTiles.png", AssetType.IMAGE);
 		className.set ("img/Items/Rock.png", __ASSET__img_items_rock_png);
 		type.set ("img/Items/Rock.png", AssetType.IMAGE);
+		className.set ("audio/GGJ_Maintheme.mp3", __ASSET__audio_ggj_maintheme_mp3);
+		type.set ("audio/GGJ_Maintheme.mp3", AssetType.MUSIC);
 		
 		
 		#elseif html5
@@ -163,11 +165,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
+		id = "audio/GGJ_Maintheme.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
 		
 		
 		#else
 		
 		#if openfl
+		
 		
 		
 		
@@ -251,6 +258,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("img/Items/Rock.png", __ASSET__img_items_rock_png);
 		type.set ("img/Items/Rock.png", AssetType.IMAGE);
+		
+		className.set ("audio/GGJ_Maintheme.mp3", __ASSET__audio_ggj_maintheme_mp3);
+		type.set ("audio/GGJ_Maintheme.mp3", AssetType.MUSIC);
 		*/
 		var useManifest = true;
 		
@@ -842,11 +852,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__img_character_doofus_psd extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__img_character_doofustiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_items_rock_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__audio_ggj_maintheme_mp3 extends flash.media.Sound { }
 
 
 #elseif html5
 
 #if openfl
+
 
 
 
@@ -897,6 +909,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 //@:file("assets/img/character/doofus.psd") class __ASSET__img_character_doofus_psd extends lime.utils.ByteArray {}
 //@:bitmap("assets/img/character/doofusTiles.png") class __ASSET__img_character_doofustiles_png extends openfl.display.BitmapData {}
 //@:bitmap("assets/img/Items/Rock.png") class __ASSET__img_items_rock_png extends openfl.display.BitmapData {}
+//@:sound("assets/audio/GGJ_Maintheme.mp3") class __ASSET__audio_ggj_maintheme_mp3 extends openfl.media.Sound {}
 //
 //
 
