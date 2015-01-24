@@ -67,6 +67,20 @@ class Vehicle extends Sprite
 		}
 	}
 	
+	public function changeMoveControl (input:String)
+	{
+		switch (input) 
+		{
+			case "right" :
+				moveRight ();
+			case "left" :
+				moveLeft ();
+			case "stop" :
+				moveStop ();
+		}
+
+	}
+	
 	function draw()
 	{
 		var platform = new Sprite();
@@ -96,18 +110,22 @@ class Vehicle extends Sprite
 		platform.x = -340;
 		platform.y = 250;
 		platforms.push(platform);
-		//graphics.beginFill(0x00ff00);
-		//graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
-		//graphics.endFill();
 	
+		var vehicleControl = new VehicleControl ();
 		addChild (vehicleControl);
-		vehicleControl.x = -100 ;
-		vehicleControl.y = 0 ;
+		vehicleControl.x = 100 ;
+		vehicleControl.y = 250 ;
 		vehicleControles.push (vehicleControl);
 		vehicleControl.controlType = "move_right" ;
+	
+		var vehicleControl2 = new VehicleControl ();
+		addChild (vehicleControl2);
+		vehicleControl2.x = -100 ;
+		vehicleControl2.y = 250 ;
+		vehicleControles.push (vehicleControl2);
+		vehicleControl2.controlType = "move_left" ;
 		
-		
-		}
+	}
 	public function update()
 	{
 		arm.rotation += 5;
@@ -123,5 +141,9 @@ class Vehicle extends Sprite
 	function moveRight()
 	{
 		terrain.speed = -speed;
+	}
+	function moveStop ()
+	{
+		terrain.speed = 0;
 	}
 }

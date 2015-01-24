@@ -124,11 +124,24 @@ class Character extends Sprite
 			
 			}
 		}
-			for (vehicleControl in vehicle.vehicleControles) {
+		for (vehicleControl in vehicle.vehicleControles) {
 			if (hitTestObject(vehicleControl)) 
 			{
-				
 				trace (vehicleControl.controlType);
+				switch (vehicleControl.controlType) 
+				{
+					case "move_right" :
+						vehicle.changeMoveControl ("right");
+						break ;
+					case "move_left" :
+						vehicle.changeMoveControl ("left");
+						break ;
+				}
+			}
+			else
+			{
+				vehicle.changeMoveControl ("stop");
+				trace ("stop");
 			}
 			
 		}
