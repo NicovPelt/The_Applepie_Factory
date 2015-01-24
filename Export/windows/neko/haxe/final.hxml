@@ -1,9 +1,17 @@
 -main ApplicationMain 
+<<<<<<< HEAD
 -cp C:/HaxeToolkit/haxe/lib/openfl/2,1,7
 -D openfl=2.1.7
 -cp Source
 -cp C:\HaxeToolkit\haxe\lib\lime/2,0,1/legacy
 -D tools=2.0.1
+=======
+-cp C:/HaxeToolkit/haxe/lib/openfl/2,2,3
+-D openfl=2.2.3
+-cp Source
+-cp C:\HaxeToolkit\haxe\lib\lime/2,0,5/legacy
+-D tools=2.0.5
+>>>>>>> 10433bf4bdc3c426f40814597b22e3d8552067a2
 -D lime-legacy
 -D no-compilation
 -D native

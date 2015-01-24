@@ -10,7 +10,7 @@ import openfl.events.Event;
  */
 class Game extends Sprite
 {
-	var character:Character = new Character();
+	var character:Character;
 	var vehicle:Vehicle;
 	var terrain:Terrain;
 	var inited:Bool = false;
@@ -28,6 +28,8 @@ class Game extends Sprite
 		addChild(terrain);
 		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
 		addChild(vehicle);
+		character = new Character(1);
+		addChild(character);
 		inited = true;
 	}
 	
@@ -38,6 +40,5 @@ class Game extends Sprite
 		terrain.update();	
 		vehicle.update();
 		}
-
 	}
 }
