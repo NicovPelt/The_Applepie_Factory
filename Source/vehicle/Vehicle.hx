@@ -1,6 +1,9 @@
 package vehicle ;
 
 import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.KeyboardEvent;
+import openfl.ui.Keyboard;
 
 /**
  * ...
@@ -38,6 +41,26 @@ class Vehicle extends Sprite
 		armGrabber.x = arm2.width;
 		arm.x = 0;
 		arm.y = -100;
+		addEventListener(Event.ADDED_TO_STAGE, init);
+	}
+	
+	function init(e:Event)
+	{
+		removeEventListener(Event.ADDED_TO_STAGE, init);
+		stage.addEventListener(KeyboardEvent.KEY_DOWN, changeMove);
+	}
+	
+	function changeMove(e:KeyboardEvent)
+	{
+		trace("Yay");
+		if (e.keyCode == Keyboard.LEFT)
+		{
+			moveLeft();
+		}
+		else if (e.keyCode == Keyboard.RIGHT)
+		{
+			moveRight();
+		}
 	}
 	
 	function draw()
@@ -53,7 +76,6 @@ class Vehicle extends Sprite
 	
 	public function update()
 	{
-		moveRight();
 		arm.rotation += 5;
 		arm2.rotation -= 5;
 		armGrabber.update();
@@ -62,10 +84,10 @@ class Vehicle extends Sprite
 	
 	function moveLeft()
 	{
-		terrain.x += speed;
+		terrain.speed = speed;
 	}
 	function moveRight()
 	{
-		terrain.x -= speed;
+		terrain.speed = -speed;
 	}
 }
