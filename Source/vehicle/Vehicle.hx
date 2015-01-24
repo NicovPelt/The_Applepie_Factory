@@ -10,6 +10,10 @@ class Vehicle extends Sprite
 {
 	var terrain:Terrain;
 	var speed:Int = 4;
+	var arm = new ArmSegment();
+	var arm2 = new ArmSegment();
+	public var armGrabber = new ArmGrabber();
+	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
 		super();
@@ -17,6 +21,15 @@ class Vehicle extends Sprite
 		this.x = xPos;
 		this.y = yPos;
 		terrain = terrainRef;
+		
+		addChild(arm);
+		arm.addChild(arm2);
+		arm2.addChild(armGrabber);
+		arm2.x = arm.width;
+		arm2.y = 0;
+		armGrabber.x = arm2.width;
+		arm.x = 0;
+		arm.y = -100;
 	}
 	
 	function draw()
@@ -29,6 +42,10 @@ class Vehicle extends Sprite
 	public function update()
 	{
 		moveLeft();
+		arm.rotation += 5;
+		arm2.rotation -= 5;
+		armGrabber.update();
+		armGrabber.rotation += 5;
 	}
 	
 	function moveLeft()
