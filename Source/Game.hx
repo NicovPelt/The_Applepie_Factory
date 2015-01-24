@@ -39,6 +39,7 @@ class Game extends Sprite
 		{
 		terrain.update();	
 		vehicle.update();
+		character.update();
 		}
 	}
 }

@@ -18,9 +18,13 @@ class Character extends Sprite
 	var tileHeight:Int = 32;
 	var tileWidth:Int = 32;
 	var tiles:Int = 1;
+	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
 	var keyLeft:Int;
 	var keyRight:Int;
+	var xSpeed = 10;
+	var ySpeed = 0;
+	var yMaxSpeed = 15;
 	
 	public function new(charNo:Int) 
 	{
@@ -35,14 +39,37 @@ class Character extends Sprite
 			keyLeft = Keyboard.LEFT;
 			keyRight = Keyboard.RIGHT;
 		}
-		
+		trace(keyJump);
+		trace(keyRight);
+		trace(keyLeft);
 	}
 	
 	function init(e:Event) {
 		initTiles();
 		drawCharacter();
+		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
 	}
 	
+	public function update() {
+		move();
+	}
+	//Move Section	
+	function onKeyDown(e:KeyboardEvent):Void {
+		keys[e.keyCode] = true;
+	}
+	function onKeyUp(e:KeyboardEvent):Void {
+		keys[e.keyCode] = false;
+	}
+	function move() {
+		if (keys[keyRight]) {
+			this.x += xSpeed;
+		}else if(keys[keyLeft]) {
+			this.x -= xSpeed;
+		}
+	}
+	
+	// Graphics Section
 	function drawCharacter():Void {
 		this.graphics.clear();
 		character.drawTiles( this.graphics, [ 0, 0, 0], true );
@@ -56,7 +83,7 @@ class Character extends Sprite
 		for( i in 0...tiles ){
 			var charRect:Rectangle = new Rectangle( tileWidth * column, tileHeight * row, tileWidth, tileHeight );
 			character.addTileRect( charRect );
-			row = Math.floor( i / 3 );
+			row = Math.ceil( i / 3 );
 			column = i % 3;
 		}
 	}
