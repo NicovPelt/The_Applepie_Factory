@@ -31,6 +31,18 @@ class ApplicationMain {
 		types.push (AssetType.MUSIC);
 		
 		
+		urls.push ("assets/img/Arm1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Arm2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/ArmAll.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("assets/img/Background/Level_1_background_1.png");
 		types.push (AssetType.IMAGE);
 		
@@ -51,6 +63,10 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("assets/img/character/dimwitTiles.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("assets/img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
@@ -63,7 +79,43 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("assets/img/Gripper1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Gripper2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Gripper3.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("assets/img/Items/Rock.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Joint1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Joint2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Joint3.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Arm1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Arm2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/ArmAll.png");
 		types.push (AssetType.IMAGE);
 		
 		
@@ -87,6 +139,10 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("img/character/dimwitTiles.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
@@ -99,7 +155,31 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("img/Gripper1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Gripper2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Gripper3.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("img/Items/Rock.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Joint1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Joint2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Joint3.png");
 		types.push (AssetType.IMAGE);
 		
 		
@@ -135,6 +215,8 @@ class ApplicationMain {
 			}
 			
 		}
+		
+		preloader = null;
 		
 		
 		

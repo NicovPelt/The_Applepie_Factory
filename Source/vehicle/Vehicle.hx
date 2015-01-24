@@ -12,18 +12,21 @@ import openfl.ui.Keyboard;
 class Vehicle extends Sprite
 {
 	
+	public var vehicleControles:Array<VehicleControl>;
 	public var platforms:Array<Sprite>;
 	var terrain:Terrain;
 	var speed:Int = 4;
-	var arm = new ArmSegment();
-	var arm2 = new ArmSegment();
+	var arm = new ArmSegment("assets/img/Arm1.png");
+	var arm2 = new ArmSegment("assets/img/Arm2.png");
 	public var armGrabber = new ArmGrabber();
+	var vehicleControl = new VehicleControl ();
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
 		super();
 		
 		platforms = new Array<Sprite>();
+		vehicleControles = new Array<VehicleControl>();
 		
 		draw();
 		
@@ -38,9 +41,9 @@ class Vehicle extends Sprite
 		addChild(arm);
 		arm.addChild(arm2);
 		arm2.addChild(armGrabber);
-		arm2.x = arm.width;
+		arm2.x = arm.width - 50;
 		arm2.y = 0;
-		armGrabber.x = arm2.width;
+		armGrabber.x = arm2.width - 50;
 		arm.x = 0;
 		arm.y = -100;
 		addEventListener(Event.ADDED_TO_STAGE, init);
@@ -96,8 +99,15 @@ class Vehicle extends Sprite
 		//graphics.beginFill(0x00ff00);
 		//graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
 		//graphics.endFill();
-	}
 	
+		addChild (vehicleControl);
+		vehicleControl.x = -100 ;
+		vehicleControl.y = 0 ;
+		vehicleControles.push (vehicleControl);
+		vehicleControl.controlType = "move_right" ;
+		
+		
+		}
 	public function update()
 	{
 		arm.rotation += 5;

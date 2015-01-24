@@ -1,24 +1,28 @@
 package vehicle ;
 import openfl.display.Sprite;
-
+import openfl.display.BitmapData;
+import openfl.display.Bitmap;
+import openfl.Assets;
 /**
  * ...
  * @author Matthijs van Gelder
  */
 class ArmSegment extends Sprite
 {
-
-	public function new() 
+	var image:String;
+	public function new(img:String) 
 	{
 		super();
+		image = img;
 		draw();
 	}
 	
 	function draw()
 	{
-		graphics.beginFill(0x000000);
-		graphics.drawCircle(0, 0, 20);
-		graphics.drawRect( 0, -10, 200, 20);
-		graphics.endFill();
+		var bitmapData:BitmapData = Assets.getBitmapData(image);
+		var bitmap = new Bitmap(bitmapData);
+		bitmap.y = -25;
+		bitmap.x = -25;
+		addChild(bitmap);
 	}
 }
