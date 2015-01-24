@@ -20,7 +20,7 @@ class Character extends Sprite
 
 	var character:Tilesheet;
 	var tileHeight:Int = 64;
-	var tileWidth:Int = 47;
+	var tileWidth:Int;
 	var tiles:Int = 18;
 	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
@@ -49,11 +49,13 @@ class Character extends Sprite
 			keyJump = Keyboard.W;
 			keyLeft = Keyboard.A;
 			keyRight = Keyboard.D;
+			tileWidth = 47;
 		}else if (charNo == 2) {
 			character = new Tilesheet(Assets.getBitmapData("img/character/dimwitTiles.png"));
 			keyJump = Keyboard.UP;
 			keyLeft = Keyboard.LEFT;
 			keyRight = Keyboard.RIGHT;
+			tileWidth = 40;
 		}
 	}
 	
