@@ -15,7 +15,6 @@ class Game extends Sprite
 	var character2:Character;
 	var vehicle:Vehicle;
 	var terrain:Terrain;
-	var rock:GrabbableObject = new GrabbableObject();
 	var inited:Bool;
 	
 	public function new() 
@@ -43,9 +42,7 @@ class Game extends Sprite
 		vehicle.characters = characters;
 		
 		inited = true;
-		addChild(rock);
-		rock.x = 1000;
-		rock.y = 500;
+
 	}
 	
 	public function update()
@@ -54,9 +51,8 @@ class Game extends Sprite
 		{
 		terrain.update();
 		vehicle.update();
-		vehicle.armGrabber.grabObject(rock);
+		vehicle.armGrabber.grabObject(terrain.rock);
 		character2.update();
-		rock.update();
 		character.update();
 
 		}

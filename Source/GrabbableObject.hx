@@ -35,6 +35,7 @@ class GrabbableObject extends Sprite
 		{
 			yVelocity = 0;
 		}
+		this.y += yVelocity;
 	}
 	
 	function draw()
