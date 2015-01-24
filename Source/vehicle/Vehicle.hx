@@ -65,7 +65,7 @@ class Vehicle extends Sprite
 		arm2.y = 0;
 		armGrabber.x = arm2.width - 100;
 		arm.x = 0;
-		arm.y = -200;
+		arm.y = -50;
 		addEventListener(Event.ADDED_TO_STAGE, init);
 	}
 	

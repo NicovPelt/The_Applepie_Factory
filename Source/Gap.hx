@@ -23,14 +23,16 @@ class Gap extends Sprite
 	function drawGap() {
 
 		this.graphics.beginFill(0xff0000);
-		this.graphics.drawRect( 0, 0, 140, 150);
+		this.graphics.drawRect( 0, 0, 50, 100);
 		this.graphics.endFill();
-		this.x = 2360;
-		this.y = stage.stageHeight - (this.height /2);
+		this.x = 2450;
+		this.y = stage.stageHeight;
+		this.alpha =0;
 	}
 	public function update() {
 		if (this.hitTestObject(rock)) {
 			isFilled = true;
+			rock.inGap = true;
 		}else {
 			isFilled = false;
 		}
