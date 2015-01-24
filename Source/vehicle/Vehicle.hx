@@ -19,11 +19,11 @@ class Vehicle extends Sprite
 	public var characters:Array<Character> = new Array<Character>();
 	var terrain:Terrain;
 	var speed:Int = 4;
+	var rotateSpeed:Int = 2;
 	var arm = new ArmSegment("assets/img/Arm1_2X.png");
 	var arm2 = new ArmSegment("assets/img/Arm2_2X.png");
 	public var armGrabber = new ArmGrabber();
 	var vehicleControl:VehicleControl;
-	var nonePressed:Bool = true;
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
@@ -51,9 +51,9 @@ class Vehicle extends Sprite
 		addChild(arm);
 		arm.addChild(arm2);
 		arm2.addChild(armGrabber);
-		arm2.x = arm.width - 100;
+		arm2.x = arm.width - 110;
 		arm2.y = 0;
-		armGrabber.x = arm2.width - 100;
+		armGrabber.x = arm2.width - 125;
 		arm.x = 0;
 		arm.y = -50;
 		addEventListener(Event.ADDED_TO_STAGE, init);
@@ -247,19 +247,20 @@ class Vehicle extends Sprite
 		armGrabber.update();
 		//armGrabber.rotation += 5;
 		
-		nonePressed = true;
+		var moving = false;
 		for (vehicleControl in vehicleControles) {
 			for(character in characters){
 				if (character.hitTestObject(vehicleControl)) 
 				{
-					nonePressed = false;
 					switch (vehicleControl.controlType) 
 					{
 						case "move_right" :
 							moveRight();
+							moving = true;
 							break ;
 						case "move_left" :
 							moveLeft();
+							moving = true;
 							break ;
 						case "move_arm_1L" :
 							moveArm1L();
@@ -283,7 +284,7 @@ class Vehicle extends Sprite
 				}	
 			}
 		}
-		if(nonePressed)
+		if(!moving)
 		{
 			moveStop();
 		}
@@ -317,23 +318,23 @@ class Vehicle extends Sprite
 	}
 	function moveArm1L()
 	{
-		arm.rotation -= 5;
-		armGrabber.rotation += 5;
+		arm.rotation -= rotateSpeed;
+		armGrabber.rotation += rotateSpeed;
 	}
 	function moveArm1R()
 	{
-		arm.rotation += 5;
-		armGrabber.rotation -= 5;
+		arm.rotation += rotateSpeed;
+		armGrabber.rotation -= rotateSpeed;
 	}
 	function moveArm2L()
 	{
-		arm2.rotation -= 5;
-		armGrabber.rotation += 5;
+		arm2.rotation -= rotateSpeed;
+		armGrabber.rotation += rotateSpeed;
 	}
 	function moveArm2R()
 	{
-		arm2.rotation += 5;
-		armGrabber.rotation -= 5;
+		arm2.rotation += rotateSpeed;
+		armGrabber.rotation -= rotateSpeed;
 	}
 	function grab()
 	{
