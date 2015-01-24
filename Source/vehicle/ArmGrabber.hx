@@ -53,6 +53,7 @@ class ArmGrabber extends Sprite
 				addChild(grabbed);
 				grabbed.x = 50;
 				grabbed.y = 0;
+				grabbed.rotation -= 90;
 				grabbed.grabbed = true;
 			}
 		}
@@ -68,6 +69,7 @@ class ArmGrabber extends Sprite
 			point = terrain.globalToLocal(point);
 			grabbed.x = point.x;
 			grabbed.y = point.y;
+			grabbed.rotation += 90;
 			grabbed.grabbed = false;
 			//grabbed = null;
 			

@@ -51,8 +51,8 @@ class GrabbableObject extends Sprite
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Items/Rock.png");
 		var bitmap = new Bitmap(bitmapData);
-		bitmap.y = -22;
-		bitmap.x = -39;
+		bitmap.y = -bitmap.height/2;
+		bitmap.x = -bitmap.width/2;
 		bitmap.scaleX = bitmap.scaleY = 1.5;
 		addChild(bitmap);
 	}
