@@ -23,7 +23,7 @@ class Main extends Sprite {
 	function update()
 	{
 		game.update();
-		Timer.delay(update, 50);
+		Timer.delay(update, 30);
 	}
 	
 }

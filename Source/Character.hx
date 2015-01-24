@@ -26,14 +26,14 @@ class Character extends Sprite
 	var keyJump:Int;
 	var keyLeft:Int;
 	var keyRight:Int;
-	var xSpeed = 5;
+	var xSpeed = 10;
 	var frame:Int = 0;
 	//var framesWalk:Int = 2;
 	//var framesJump:Int = 1;
 	
 	var isGrounded:Bool = false;
-	var jumpSpeed:Int = 20;
-	var acceleration:Int = 1;
+	var jumpSpeed:Int = 40;
+	var acceleration:Int = 4;
 	var verticleSpeed:Int = 0;
 	var horizontalSpeed:Int = 0;
 	
@@ -134,25 +134,6 @@ class Character extends Sprite
 		}
 		
 	}
-	
-	//function keyDown(event:KeyboardEvent) {
-		//if (event.keyCode == keyJump && isGrounded) {
-			//verticleSpeed -= jumpSpeed;
-		//} else if (event.keyCode == keyLeft) {
-			//horizontalSpeed = -2;
-			//addEventListener(KeyboardEvent.KEY_UP, keyUp);
-		//} else if (event.keyCode == keyRight) {
-			//horizontalSpeed = 2;
-			//addEventListener(KeyboardEvent.KEY_UP, keyUp);
-		//}
-	//}
-	//
-	//function keyUp(event:KeyboardEvent) {
-		//if (event.keyCode == keyLeft || event.keyCode == keyRight) {
-			//horizontalSpeed = 0;
-			//removeEventListener(KeyboardEvent.KEY_UP, keyUp);
-		//}
-	//}
 	
 	// Graphics Section
 	function drawCharacter():Void {
