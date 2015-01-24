@@ -11,7 +11,6 @@ import openfl.display.Sprite;
  */
 class Terrain extends Sprite
 {
-	public var gap:Gap = new Gap();
 	public var speed:Float = -4;
 	var bitmap:Bitmap;
 	var bitmap2:Bitmap;
@@ -45,11 +44,9 @@ class Terrain extends Sprite
 		this.y = 0;
 	}
 	
-	public function addObject(object:GrabbableObject) {
+	public function addObject(object:GrabbableObject) 
+	{
 		addChild(object);
-		var gap:Gap = new Gap(object);
-		addChild(gap);
-		gaps.push(gap);
 	}
 	
 	public function update()

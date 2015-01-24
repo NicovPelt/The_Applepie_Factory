@@ -185,19 +185,25 @@ class Vehicle extends Sprite
 	
 	function moveLeft()
 	{
-		if (hitTestObject(terrain.gap) == false || terrain.gap.isFilled == true)
+		for (gap in terrain.gaps)
 		{
-			terrain.speed = speed;
+			if (hitTestObject(gap) == false || gap.isFilled == true)
+			{
+				terrain.speed = speed;
+			}
+			else terrain.speed = 0;
 		}
-		else terrain.speed = 0;
 	}
 	function moveRight()
 	{
-		if (hitTestObject(terrain.gap) == false || terrain.gap.isFilled == true)
+		for (gap in terrain.gaps)
 		{
-			terrain.speed = -speed;
+			if (hitTestObject(gap) == false || gap.isFilled == true)
+			{
+				terrain.speed = -speed;
+			}
+			else terrain.speed = 0;
 		}
-		else terrain.speed = 0;
 	}
 	function moveStop ()
 	{
