@@ -168,7 +168,6 @@ class Character extends Sprite
 		
 	}
 	function animateLeft() {
-<<<<<<< HEAD
 		this.graphics.clear();
 		if (frame % 4 != 2) { frame = 2; }
 		if (frame + 4 < tiles) {
@@ -176,15 +175,6 @@ class Character extends Sprite
 			}else {
 				frame = 2;
 			}
-=======
-	this.graphics.clear();
-	if (frame % 3 != 2) { frame = 2;}
-		if (frame + 3 < tiles) {
-			frame += 3;
-		}else {
-			frame = 2;
-		}
->>>>>>> b0dc28c6a0aa4c19bb0fd65cf5f19dce10cd93bd
 		character.drawTiles( this.graphics, [ 0, 0, frame], true );
 		
 	}
