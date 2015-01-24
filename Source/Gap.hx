@@ -34,6 +34,5 @@ class Gap extends Sprite
 		}else {
 			isFilled = false;
 		}
-		trace(isFilled);
 	}
 }

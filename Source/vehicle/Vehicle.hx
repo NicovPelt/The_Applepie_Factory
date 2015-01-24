@@ -24,6 +24,8 @@ class Vehicle extends Sprite
 	public var armGrabber = new ArmGrabber();
 	var vehicleControl:VehicleControl;
 	var nonePressed:Bool = true;
+	var sortedX:Array<Int> = [40 ,-115,-123,-192,  80,300,120,-300];
+	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
@@ -33,6 +35,14 @@ class Vehicle extends Sprite
 		vehicleControles = new Array<VehicleControl>();
 		
 		draw();
+		
+		for (control in vehicleControles) {
+			var i:Int = Std.random(sortedX.length);
+			control.x = sortedX[i];
+			control.y = sortedY[i];
+			sortedX.splice(i,1);
+			sortedY.splice(i,1);
+		}
 		
 		for(platform in platforms){
 			addChild(platform);
