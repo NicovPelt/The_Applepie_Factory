@@ -11,9 +11,10 @@ class VehicleControl extends Sprite
 
 	public var controlType : String ;
 	
-	public function new() 
+	public function new(controlType:String) 
 	{
 		super();
+		this.controlType = controlType;
 		draw();
 	}
 	function draw()
