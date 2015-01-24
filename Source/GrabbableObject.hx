@@ -15,8 +15,9 @@ class GrabbableObject extends Sprite
 	var gravity:Int;
 	var yVelocity:Int;
 	var xVelocity:Int;
-	var minGroundLevel:Int;
+	public var minGroundLevel:Int;
 	public var grabbed:Bool;
+	public var inGap:Bool = false;
 	
 	public function new() 
 	{
@@ -44,6 +45,11 @@ class GrabbableObject extends Sprite
 		else
 		{
 			yVelocity = 0;
+		}
+		if (inGap) {
+			minGroundLevel = Math.round(stage.stageHeight - this.height /2);
+		}else {
+			minGroundLevel = 980;
 		}
 	}
 	
