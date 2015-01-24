@@ -161,15 +161,15 @@ class Character extends Sprite
 			character.drawTiles( this.graphics, [ 0, 0, frame], true );
 		
 	}
-		function animateLeft() {
-		this.graphics.clear();
-		if (frame % 3 != 2) { frame = 2;}
-			if (frame + 3 < tiles) {
-				frame += 3;
-			}else {
-				frame = 2;
-			}
-			character.drawTiles( this.graphics, [ 0, 0, frame], true );
+	function animateLeft() {
+	this.graphics.clear();
+	if (frame % 3 != 2) { frame = 2;}
+		if (frame + 3 < tiles) {
+			frame += 3;
+		}else {
+			frame = 2;
+		}
+		character.drawTiles( this.graphics, [ 0, 0, frame], true );
 		
 	}
 }
