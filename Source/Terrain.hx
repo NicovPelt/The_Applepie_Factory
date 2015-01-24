@@ -46,11 +46,11 @@ class Terrain extends Sprite
 	
 	public function update()
 	{
-		bitmap.x += speed * .6;
-		bitmap2.x += speed * .2;
-		bitmap3.x += speed * .1;
-		bitmap4.x += speed * 1;
-		bitmap5.x += speed * 1;
-		
+		bitmap.x -= speed * .4;
+		bitmap2.x -= speed * .8;
+		bitmap3.x -= speed * .9;
+		this.x += speed;
+		//bitmap4.x += speed * 1;
+		//bitmap5.x += speed * 1;
 	}
 }
