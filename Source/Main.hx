@@ -22,7 +22,6 @@ class Main extends Sprite {
 	{
 		game.update();
 		Timer.delay(update, 50);
-		game.rotation += 1;
 	}
 	
 }
