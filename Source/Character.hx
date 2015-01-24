@@ -28,8 +28,6 @@ class Character extends Sprite
 	var keyRight:Int;
 	var xSpeed = 10;
 	var frame:Int = 0;
-	//var framesWalk:Int = 2;
-	//var framesJump:Int = 1;
 	
 	var isGrounded:Bool = false;
 	var jumpSpeed:Int = 25;
@@ -129,7 +127,6 @@ class Character extends Sprite
 			} else if (hitTestObject(platform) && (this.x + this.width) > point.x && horizontalSpeed > 0 && ((this.y > point.y && this.y < point.y + platform.height) || (this.y + this.height > point.y && this.y + this.height < point.y + platform.height))) {//right collision detect
 				horizontalSpeed = 0;
 				this.x = point.x - this.width;
-			
 			}
 		}
 	}
