@@ -1,11 +1,12 @@
-package vehicle ;
+package ;
+
 import openfl.display.Sprite;
 
 /**
  * ...
  * @author Matthijs van Gelder
  */
-class ArmSegment extends Sprite
+class GrabbableObject extends Sprite
 {
 
 	public function new() 
@@ -13,12 +14,10 @@ class ArmSegment extends Sprite
 		super();
 		draw();
 	}
-	
 	function draw()
 	{
 		graphics.beginFill(0x000000);
-		graphics.drawCircle(0, 0, 20);
-		graphics.drawRect( 0, -10, 200, 20);
+		graphics.drawCircle(0, 0, 40);
 		graphics.endFill();
 	}
 }
