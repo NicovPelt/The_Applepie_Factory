@@ -68,18 +68,31 @@ class Vehicle extends Sprite
 	{
 		var platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 20, 200);
-		platform.x = 150;
-		platform.y = -100;
+		platform.graphics.drawRect( 0, 0, 10, 500);
+		platform.x = 350;
+		platform.y = -250;
+		platforms.push(platform);
+		
+		var platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 10, 500);
+		platform.x = -350;
+		platform.y = -240;
 		platforms.push(platform);
 		
 		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 200, 10);
-		platform.x = -100;
-		platform.y = 100;
+		platform.graphics.drawRect( 0, 0, 700, 10);
+		platform.x = -350;
+		platform.y = -250;
 		platforms.push(platform);
 		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 700, 10);
+		platform.x = -340;
+		platform.y = 250;
+		platforms.push(platform);
 		//graphics.beginFill(0x00ff00);
 		//graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
 		//graphics.endFill();
