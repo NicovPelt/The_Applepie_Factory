@@ -105,22 +105,18 @@ class Character extends Sprite
 			point = vehicle.localToGlobal(point);
 			if (!isGrounded) {
 				if (hitTestObject(platform) && (this.y + this.height) > point.y && verticleSpeed > 0 && !(this.y + this.height > point.y + verticleSpeed)) {//bottom collision detect
-					trace("bottom");
 					isGrounded = true;
 					verticleSpeed = 0;
 					this.y = point.y - this.height;
 				} else if (hitTestObject(platform) && this.y < (point.y + platform.height) && verticleSpeed < 0 && !(this.y < point.y + platform.height + verticleSpeed)){ //top collision detect
-					trace("top");
 					this.y = point.y + platform.height + 2;
 					verticleSpeed = 0;
 				} 
 			}
 			if (hitTestObject(platform) && this.x < (point.x + platform.width) && horizontalSpeed < 0 && ((this.y > point.y && this.y < point.y + platform.height) || (this.y + this.height > point.y && this.y + this.height < point.y + platform.height))) {//left collision detect
-				trace("left");
 				horizontalSpeed = 0;
 				this.x = point.x + platform.width;
 			} else if (hitTestObject(platform) && (this.x + this.width) > point.x && horizontalSpeed > 0 && ((this.y > point.y && this.y < point.y + platform.height) || (this.y + this.height > point.y && this.y + this.height < point.y + platform.height))) {//right collision detect
-				trace("right");
 				horizontalSpeed = 0;
 				this.x = point.x - this.width;
 			
@@ -162,7 +158,6 @@ class Character extends Sprite
 		var row:Int = 0;
 		for( i in 0...(tiles) ){
 			var charRect:Rectangle = new Rectangle( tileWidth * column, tileHeight * row, tileWidth, tileHeight );
-			trace(column);
 			character.addTileRect( charRect );
 			if (column + 1 >= 3) {
 				row++;
@@ -181,7 +176,6 @@ class Character extends Sprite
 			}else {
 				frame = 1;
 			}
-			trace (frame);
 			character.drawTiles( this.graphics, [ 0, 0, frame], true );
 		
 	}
@@ -193,7 +187,6 @@ class Character extends Sprite
 			}else {
 				frame = 2;
 			}
-			trace (frame);
 			character.drawTiles( this.graphics, [ 0, 0, frame], true );
 		
 	}
