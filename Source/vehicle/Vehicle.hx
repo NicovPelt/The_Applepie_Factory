@@ -53,7 +53,7 @@ class Vehicle extends Sprite
 	
 	public function update()
 	{
-		moveLeft();
+		moveRight();
 		arm.rotation += 5;
 		arm2.rotation -= 5;
 		armGrabber.update();

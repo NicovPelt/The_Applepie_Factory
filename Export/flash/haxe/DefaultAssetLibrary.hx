@@ -44,11 +44,107 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/img/Background/Level_1_background_1.png", __ASSET__assets_img_background_level_1_background_1_png);
+		type.set ("assets/img/Background/Level_1_background_1.png", AssetType.IMAGE);
+		className.set ("assets/img/Background/Level_1_background_2.png", __ASSET__assets_img_background_level_1_background_2_png);
+		type.set ("assets/img/Background/Level_1_background_2.png", AssetType.IMAGE);
+		className.set ("assets/img/Background/Level_1_background_space.png", __ASSET__assets_img_background_level_1_background_space_png);
+		type.set ("assets/img/Background/Level_1_background_space.png", AssetType.IMAGE);
+		className.set ("assets/img/Background/level_1_ground.png", __ASSET__assets_img_background_level_1_ground_png);
+		type.set ("assets/img/Background/level_1_ground.png", AssetType.IMAGE);
+		className.set ("assets/img/Background/level_1_ground_2.png", __ASSET__assets_img_background_level_1_ground_2_png);
+		type.set ("assets/img/Background/level_1_ground_2.png", AssetType.IMAGE);
+		className.set ("assets/img/character/doofus.png", __ASSET__assets_img_character_doofus_png);
+		type.set ("assets/img/character/doofus.png", AssetType.IMAGE);
+		className.set ("assets/img/character/doofus.psd", __ASSET__assets_img_character_doofus_psd);
+		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
+		className.set ("assets/img/Items/Rock.png", __ASSET__assets_img_items_rock_png);
+		type.set ("assets/img/Items/Rock.png", AssetType.IMAGE);
+		className.set ("img/Background/Level_1_background_1.png", __ASSET__img_background_level_1_background_1_png);
+		type.set ("img/Background/Level_1_background_1.png", AssetType.IMAGE);
+		className.set ("img/Background/Level_1_background_2.png", __ASSET__img_background_level_1_background_2_png);
+		type.set ("img/Background/Level_1_background_2.png", AssetType.IMAGE);
+		className.set ("img/Background/Level_1_background_space.png", __ASSET__img_background_level_1_background_space_png);
+		type.set ("img/Background/Level_1_background_space.png", AssetType.IMAGE);
+		className.set ("img/Background/level_1_ground.png", __ASSET__img_background_level_1_ground_png);
+		type.set ("img/Background/level_1_ground.png", AssetType.IMAGE);
+		className.set ("img/Background/level_1_ground_2.png", __ASSET__img_background_level_1_ground_2_png);
+		type.set ("img/Background/level_1_ground_2.png", AssetType.IMAGE);
+		className.set ("img/character/doofus.png", __ASSET__img_character_doofus_png);
+		type.set ("img/character/doofus.png", AssetType.IMAGE);
+		className.set ("img/character/doofus.psd", __ASSET__img_character_doofus_psd);
+		type.set ("img/character/doofus.psd", AssetType.BINARY);
+		className.set ("img/Items/Rock.png", __ASSET__img_items_rock_png);
+		type.set ("img/Items/Rock.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/img/Background/Level_1_background_1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Background/Level_1_background_2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Background/Level_1_background_space.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Background/level_1_ground.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Background/level_1_ground_2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/character/doofus.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/character/doofus.psd";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/img/Items/Rock.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Background/Level_1_background_1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Background/Level_1_background_2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Background/Level_1_background_space.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Background/level_1_ground.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Background/level_1_ground_2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/character/doofus.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/character/doofus.psd";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "img/Items/Rock.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		
 		
 		#else
@@ -56,11 +152,75 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if openfl
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		/*var useManifest = false;
+		
+		className.set ("assets/img/Background/Level_1_background_1.png", __ASSET__assets_img_background_level_1_background_1_png);
+		type.set ("assets/img/Background/Level_1_background_1.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Background/Level_1_background_2.png", __ASSET__assets_img_background_level_1_background_2_png);
+		type.set ("assets/img/Background/Level_1_background_2.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Background/Level_1_background_space.png", __ASSET__assets_img_background_level_1_background_space_png);
+		type.set ("assets/img/Background/Level_1_background_space.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Background/level_1_ground.png", __ASSET__assets_img_background_level_1_ground_png);
+		type.set ("assets/img/Background/level_1_ground.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Background/level_1_ground_2.png", __ASSET__assets_img_background_level_1_ground_2_png);
+		type.set ("assets/img/Background/level_1_ground_2.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/character/doofus.png", __ASSET__assets_img_character_doofus_png);
+		type.set ("assets/img/character/doofus.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/character/doofus.psd", __ASSET__assets_img_character_doofus_psd);
+		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
+		
+		className.set ("assets/img/Items/Rock.png", __ASSET__assets_img_items_rock_png);
+		type.set ("assets/img/Items/Rock.png", AssetType.IMAGE);
+		
+		className.set ("img/Background/Level_1_background_1.png", __ASSET__img_background_level_1_background_1_png);
+		type.set ("img/Background/Level_1_background_1.png", AssetType.IMAGE);
+		
+		className.set ("img/Background/Level_1_background_2.png", __ASSET__img_background_level_1_background_2_png);
+		type.set ("img/Background/Level_1_background_2.png", AssetType.IMAGE);
+		
+		className.set ("img/Background/Level_1_background_space.png", __ASSET__img_background_level_1_background_space_png);
+		type.set ("img/Background/Level_1_background_space.png", AssetType.IMAGE);
+		
+		className.set ("img/Background/level_1_ground.png", __ASSET__img_background_level_1_ground_png);
+		type.set ("img/Background/level_1_ground.png", AssetType.IMAGE);
+		
+		className.set ("img/Background/level_1_ground_2.png", __ASSET__img_background_level_1_ground_2_png);
+		type.set ("img/Background/level_1_ground_2.png", AssetType.IMAGE);
+		
+		className.set ("img/character/doofus.png", __ASSET__img_character_doofus_png);
+		type.set ("img/character/doofus.png", AssetType.IMAGE);
+		
+		className.set ("img/character/doofus.psd", __ASSET__img_character_doofus_psd);
+		type.set ("img/character/doofus.psd", AssetType.BINARY);
+		
+		className.set ("img/Items/Rock.png", __ASSET__img_items_rock_png);
+		type.set ("img/Items/Rock.png", AssetType.IMAGE);
 		*/
 		var useManifest = true;
 		
@@ -633,11 +793,43 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_background_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_background_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_background_space_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_ground_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_ground_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_img_items_rock_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_background_level_1_background_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_background_level_1_background_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_background_level_1_background_space_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_background_level_1_ground_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_background_level_1_ground_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_character_doofus_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__img_items_rock_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 
 
 #elseif html5
 
 #if openfl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #end
 
@@ -650,6 +842,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 //
+//@:bitmap("Assets/img/Background/Level_1_background_1.png") class __ASSET__assets_img_background_level_1_background_1_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Background/Level_1_background_2.png") class __ASSET__assets_img_background_level_1_background_2_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Background/Level_1_background_space.png") class __ASSET__assets_img_background_level_1_background_space_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Background/level_1_ground.png") class __ASSET__assets_img_background_level_1_ground_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Background/level_1_ground_2.png") class __ASSET__assets_img_background_level_1_ground_2_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/character/doofus.png") class __ASSET__assets_img_character_doofus_png extends openfl.display.BitmapData {}
+//@:file("Assets/img/character/doofus.psd") class __ASSET__assets_img_character_doofus_psd extends lime.utils.ByteArray {}
+//@:bitmap("Assets/img/Items/Rock.png") class __ASSET__assets_img_items_rock_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Background/Level_1_background_1.png") class __ASSET__img_background_level_1_background_1_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Background/Level_1_background_2.png") class __ASSET__img_background_level_1_background_2_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Background/Level_1_background_space.png") class __ASSET__img_background_level_1_background_space_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Background/level_1_ground.png") class __ASSET__img_background_level_1_ground_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Background/level_1_ground_2.png") class __ASSET__img_background_level_1_ground_2_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/character/doofus.png") class __ASSET__img_character_doofus_png extends openfl.display.BitmapData {}
+//@:file("assets/img/character/doofus.psd") class __ASSET__img_character_doofus_psd extends lime.utils.ByteArray {}
+//@:bitmap("assets/img/Items/Rock.png") class __ASSET__img_items_rock_png extends openfl.display.BitmapData {}
 //
 //
 

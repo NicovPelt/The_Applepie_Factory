@@ -32,7 +32,7 @@ class ArmGrabber extends Sprite
 			grabbed = object;
 			grabbing = true;
 			addChild(grabbed);
-			grabbed.x = 0;
+			grabbed.x = 50;
 			grabbed.y = 0;
 		}
 	}

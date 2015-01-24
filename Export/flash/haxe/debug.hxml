@@ -6,11 +6,13 @@
 -cp Source
 -D lime-openal
 -D tools=2.0.0-beta
+-D flash-use-stage
 -D no-compilation
 -D lime-opengl
 -D openfl-flash
 -D lime-curl
 -D web
+-swf-lib Export/flash/obj/assets.swf
 -swf-version 11.2
 -swf Export/flash/bin/Scrambled.swf
 -swf-header 1920:1080:30:FFFFFF
