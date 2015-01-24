@@ -35,7 +35,6 @@ class ArmGrabber extends Sprite
 			grabbed.x = 50;
 			grabbed.y = 0;
 		}
-		this.
 	}
 	
 	public function dropObject()
