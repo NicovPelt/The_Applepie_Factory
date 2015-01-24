@@ -14,8 +14,8 @@ class Game extends Sprite
 	var character:Character;
 	var vehicle:Vehicle;
 	var terrain:Terrain;
-	var inited:Bool = false;
 	var rock:GrabbableObject = new GrabbableObject();
+	var inited:Bool;
 	
 	public function new() 
 	{
@@ -26,7 +26,7 @@ class Game extends Sprite
 	//Called when the Game Class is added to the stage by the main class
 	function init(e:Event) 
 	{
-		if(!inited){
+		removeEventListener(Event.ADDED_TO_STAGE, init);
 		terrain = new Terrain();
 		addChild(terrain);
 		terrain.scaleX = terrain.scaleY = 2;

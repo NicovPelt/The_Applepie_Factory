@@ -54,7 +54,6 @@ class Vehicle extends Sprite
 	
 	function changeMove(e:KeyboardEvent)
 	{
-		trace("Yay");
 		if (e.keyCode == Keyboard.LEFT)
 		{
 			moveLeft();
