@@ -1,7 +1,9 @@
 package vehicle ;
 import openfl.display.Sprite;
 import openfl.geom.Point;
-
+import openfl.display.BitmapData;
+import openfl.display.Bitmap;
+import openfl.Assets;
 
 /**
  * ...
@@ -19,10 +21,22 @@ class ArmGrabber extends Sprite
 	
 	function draw()
 	{
-		graphics.beginFill(0x000022);
-		graphics.drawCircle(0, 0, 20);
-		graphics.drawRect( 0, -10, 80, 20);
-		graphics.endFill();
+		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Gripper1.png");
+		var bitmap = new Bitmap(bitmapData);
+		bitmap.y = -50;
+		bitmap.x = -12;
+		addChild(bitmap);
+		var bitmapData2:BitmapData = Assets.getBitmapData("assets/img/Gripper2.png");
+		var bitmap2 = new Bitmap(bitmapData2);
+		bitmap2.y = -50;
+		bitmap2.x = -12;
+		addChild(bitmap2);
+		var bitmapData3:BitmapData = Assets.getBitmapData("assets/img/Gripper3.png");
+		var bitmap3 = new Bitmap(bitmapData3);
+		bitmap3.y = 50 - 15;
+		bitmap3.x = -12;
+		addChild(bitmap3);
+		
 	}
 	
 	public function grabObject(object:GrabbableObject)

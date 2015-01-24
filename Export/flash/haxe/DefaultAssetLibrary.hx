@@ -46,6 +46,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/audio/GGJ_Maintheme.mp3", __ASSET__assets_audio_ggj_maintheme_mp3);
 		type.set ("assets/audio/GGJ_Maintheme.mp3", AssetType.MUSIC);
+		className.set ("assets/img/Arm1.png", __ASSET__assets_img_arm1_png);
+		type.set ("assets/img/Arm1.png", AssetType.IMAGE);
+		className.set ("assets/img/Arm2.png", __ASSET__assets_img_arm2_png);
+		type.set ("assets/img/Arm2.png", AssetType.IMAGE);
+		className.set ("assets/img/ArmAll.png", __ASSET__assets_img_armall_png);
+		type.set ("assets/img/ArmAll.png", AssetType.IMAGE);
 		className.set ("assets/img/Background/Level_1_background_1.png", __ASSET__assets_img_background_level_1_background_1_png);
 		type.set ("assets/img/Background/Level_1_background_1.png", AssetType.IMAGE);
 		className.set ("assets/img/Background/Level_1_background_2.png", __ASSET__assets_img_background_level_1_background_2_png);
@@ -62,8 +68,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
 		className.set ("assets/img/character/doofusTiles.png", __ASSET__assets_img_character_doofustiles_png);
 		type.set ("assets/img/character/doofusTiles.png", AssetType.IMAGE);
+		className.set ("assets/img/Gripper1.png", __ASSET__assets_img_gripper1_png);
+		type.set ("assets/img/Gripper1.png", AssetType.IMAGE);
+		className.set ("assets/img/Gripper2.png", __ASSET__assets_img_gripper2_png);
+		type.set ("assets/img/Gripper2.png", AssetType.IMAGE);
+		className.set ("assets/img/Gripper3.png", __ASSET__assets_img_gripper3_png);
+		type.set ("assets/img/Gripper3.png", AssetType.IMAGE);
 		className.set ("assets/img/Items/Rock.png", __ASSET__assets_img_items_rock_png);
 		type.set ("assets/img/Items/Rock.png", AssetType.IMAGE);
+		className.set ("assets/img/Joint1.png", __ASSET__assets_img_joint1_png);
+		type.set ("assets/img/Joint1.png", AssetType.IMAGE);
+		className.set ("assets/img/Joint2.png", __ASSET__assets_img_joint2_png);
+		type.set ("assets/img/Joint2.png", AssetType.IMAGE);
+		className.set ("assets/img/Joint3.png", __ASSET__assets_img_joint3_png);
+		type.set ("assets/img/Joint3.png", AssetType.IMAGE);
+		className.set ("img/Arm1.png", __ASSET__img_arm1_png);
+		type.set ("img/Arm1.png", AssetType.IMAGE);
+		className.set ("img/Arm2.png", __ASSET__img_arm2_png);
+		type.set ("img/Arm2.png", AssetType.IMAGE);
+		className.set ("img/ArmAll.png", __ASSET__img_armall_png);
+		type.set ("img/ArmAll.png", AssetType.IMAGE);
 		className.set ("img/Background/Level_1_background_1.png", __ASSET__img_background_level_1_background_1_png);
 		type.set ("img/Background/Level_1_background_1.png", AssetType.IMAGE);
 		className.set ("img/Background/Level_1_background_2.png", __ASSET__img_background_level_1_background_2_png);
@@ -80,8 +104,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/character/doofus.psd", AssetType.BINARY);
 		className.set ("img/character/doofusTiles.png", __ASSET__img_character_doofustiles_png);
 		type.set ("img/character/doofusTiles.png", AssetType.IMAGE);
+		className.set ("img/Gripper1.png", __ASSET__img_gripper1_png);
+		type.set ("img/Gripper1.png", AssetType.IMAGE);
+		className.set ("img/Gripper2.png", __ASSET__img_gripper2_png);
+		type.set ("img/Gripper2.png", AssetType.IMAGE);
+		className.set ("img/Gripper3.png", __ASSET__img_gripper3_png);
+		type.set ("img/Gripper3.png", AssetType.IMAGE);
 		className.set ("img/Items/Rock.png", __ASSET__img_items_rock_png);
 		type.set ("img/Items/Rock.png", AssetType.IMAGE);
+		className.set ("img/Joint1.png", __ASSET__img_joint1_png);
+		type.set ("img/Joint1.png", AssetType.IMAGE);
+		className.set ("img/Joint2.png", __ASSET__img_joint2_png);
+		type.set ("img/Joint2.png", AssetType.IMAGE);
+		className.set ("img/Joint3.png", __ASSET__img_joint3_png);
+		type.set ("img/Joint3.png", AssetType.IMAGE);
 		className.set ("audio/GGJ_Maintheme.mp3", __ASSET__audio_ggj_maintheme_mp3);
 		type.set ("audio/GGJ_Maintheme.mp3", AssetType.MUSIC);
 		
@@ -93,6 +129,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.MUSIC);
+		id = "assets/img/Arm1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Arm2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/ArmAll.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Background/Level_1_background_1.png";
 		path.set (id, id);
 		
@@ -125,7 +173,43 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Gripper1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Gripper2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Gripper3.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Items/Rock.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Joint1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Joint2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Joint3.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Arm1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Arm2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/ArmAll.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -161,7 +245,31 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
+		id = "img/Gripper1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Gripper2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Gripper3.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "img/Items/Rock.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Joint1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Joint2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Joint3.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -196,6 +304,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
@@ -204,6 +330,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/audio/GGJ_Maintheme.mp3", __ASSET__assets_audio_ggj_maintheme_mp3);
 		type.set ("assets/audio/GGJ_Maintheme.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/img/Arm1.png", __ASSET__assets_img_arm1_png);
+		type.set ("assets/img/Arm1.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Arm2.png", __ASSET__assets_img_arm2_png);
+		type.set ("assets/img/Arm2.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/ArmAll.png", __ASSET__assets_img_armall_png);
+		type.set ("assets/img/ArmAll.png", AssetType.IMAGE);
 		
 		className.set ("assets/img/Background/Level_1_background_1.png", __ASSET__assets_img_background_level_1_background_1_png);
 		type.set ("assets/img/Background/Level_1_background_1.png", AssetType.IMAGE);
@@ -229,8 +364,35 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/img/character/doofusTiles.png", __ASSET__assets_img_character_doofustiles_png);
 		type.set ("assets/img/character/doofusTiles.png", AssetType.IMAGE);
 		
+		className.set ("assets/img/Gripper1.png", __ASSET__assets_img_gripper1_png);
+		type.set ("assets/img/Gripper1.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Gripper2.png", __ASSET__assets_img_gripper2_png);
+		type.set ("assets/img/Gripper2.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Gripper3.png", __ASSET__assets_img_gripper3_png);
+		type.set ("assets/img/Gripper3.png", AssetType.IMAGE);
+		
 		className.set ("assets/img/Items/Rock.png", __ASSET__assets_img_items_rock_png);
 		type.set ("assets/img/Items/Rock.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Joint1.png", __ASSET__assets_img_joint1_png);
+		type.set ("assets/img/Joint1.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Joint2.png", __ASSET__assets_img_joint2_png);
+		type.set ("assets/img/Joint2.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/Joint3.png", __ASSET__assets_img_joint3_png);
+		type.set ("assets/img/Joint3.png", AssetType.IMAGE);
+		
+		className.set ("img/Arm1.png", __ASSET__img_arm1_png);
+		type.set ("img/Arm1.png", AssetType.IMAGE);
+		
+		className.set ("img/Arm2.png", __ASSET__img_arm2_png);
+		type.set ("img/Arm2.png", AssetType.IMAGE);
+		
+		className.set ("img/ArmAll.png", __ASSET__img_armall_png);
+		type.set ("img/ArmAll.png", AssetType.IMAGE);
 		
 		className.set ("img/Background/Level_1_background_1.png", __ASSET__img_background_level_1_background_1_png);
 		type.set ("img/Background/Level_1_background_1.png", AssetType.IMAGE);
@@ -256,8 +418,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("img/character/doofusTiles.png", __ASSET__img_character_doofustiles_png);
 		type.set ("img/character/doofusTiles.png", AssetType.IMAGE);
 		
+		className.set ("img/Gripper1.png", __ASSET__img_gripper1_png);
+		type.set ("img/Gripper1.png", AssetType.IMAGE);
+		
+		className.set ("img/Gripper2.png", __ASSET__img_gripper2_png);
+		type.set ("img/Gripper2.png", AssetType.IMAGE);
+		
+		className.set ("img/Gripper3.png", __ASSET__img_gripper3_png);
+		type.set ("img/Gripper3.png", AssetType.IMAGE);
+		
 		className.set ("img/Items/Rock.png", __ASSET__img_items_rock_png);
 		type.set ("img/Items/Rock.png", AssetType.IMAGE);
+		
+		className.set ("img/Joint1.png", __ASSET__img_joint1_png);
+		type.set ("img/Joint1.png", AssetType.IMAGE);
+		
+		className.set ("img/Joint2.png", __ASSET__img_joint2_png);
+		type.set ("img/Joint2.png", AssetType.IMAGE);
+		
+		className.set ("img/Joint3.png", __ASSET__img_joint3_png);
+		type.set ("img/Joint3.png", AssetType.IMAGE);
 		
 		className.set ("audio/GGJ_Maintheme.mp3", __ASSET__audio_ggj_maintheme_mp3);
 		type.set ("audio/GGJ_Maintheme.mp3", AssetType.MUSIC);
@@ -834,6 +1014,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_audio_ggj_maintheme_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_img_arm1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_arm2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_armall_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_background_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_background_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_img_background_level_1_background_space_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -842,7 +1025,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_psd extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_img_character_doofustiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_gripper1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_gripper2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_gripper3_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_img_items_rock_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_joint1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_joint2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_joint3_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_arm1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_arm2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_armall_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_background_level_1_background_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_background_level_1_background_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_background_level_1_background_space_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -851,13 +1043,37 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_character_doofus_psd extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__img_character_doofustiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_gripper1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_gripper2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_gripper3_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_items_rock_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_joint1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_joint2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_joint3_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__audio_ggj_maintheme_mp3 extends flash.media.Sound { }
 
 
 #elseif html5
 
 #if openfl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -891,6 +1107,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 //
 //@:sound("Assets/audio/GGJ_Maintheme.mp3") class __ASSET__assets_audio_ggj_maintheme_mp3 extends openfl.media.Sound {}
+//@:bitmap("Assets/img/Arm1.png") class __ASSET__assets_img_arm1_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Arm2.png") class __ASSET__assets_img_arm2_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/ArmAll.png") class __ASSET__assets_img_armall_png extends openfl.display.BitmapData {}
 //@:bitmap("Assets/img/Background/Level_1_background_1.png") class __ASSET__assets_img_background_level_1_background_1_png extends openfl.display.BitmapData {}
 //@:bitmap("Assets/img/Background/Level_1_background_2.png") class __ASSET__assets_img_background_level_1_background_2_png extends openfl.display.BitmapData {}
 //@:bitmap("Assets/img/Background/Level_1_background_space.png") class __ASSET__assets_img_background_level_1_background_space_png extends openfl.display.BitmapData {}
@@ -899,7 +1118,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 //@:bitmap("Assets/img/character/doofus.png") class __ASSET__assets_img_character_doofus_png extends openfl.display.BitmapData {}
 //@:file("Assets/img/character/doofus.psd") class __ASSET__assets_img_character_doofus_psd extends lime.utils.ByteArray {}
 //@:bitmap("Assets/img/character/doofusTiles.png") class __ASSET__assets_img_character_doofustiles_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Gripper1.png") class __ASSET__assets_img_gripper1_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Gripper2.png") class __ASSET__assets_img_gripper2_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Gripper3.png") class __ASSET__assets_img_gripper3_png extends openfl.display.BitmapData {}
 //@:bitmap("Assets/img/Items/Rock.png") class __ASSET__assets_img_items_rock_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Joint1.png") class __ASSET__assets_img_joint1_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Joint2.png") class __ASSET__assets_img_joint2_png extends openfl.display.BitmapData {}
+//@:bitmap("Assets/img/Joint3.png") class __ASSET__assets_img_joint3_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Arm1.png") class __ASSET__img_arm1_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Arm2.png") class __ASSET__img_arm2_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/ArmAll.png") class __ASSET__img_armall_png extends openfl.display.BitmapData {}
 //@:bitmap("assets/img/Background/Level_1_background_1.png") class __ASSET__img_background_level_1_background_1_png extends openfl.display.BitmapData {}
 //@:bitmap("assets/img/Background/Level_1_background_2.png") class __ASSET__img_background_level_1_background_2_png extends openfl.display.BitmapData {}
 //@:bitmap("assets/img/Background/Level_1_background_space.png") class __ASSET__img_background_level_1_background_space_png extends openfl.display.BitmapData {}
@@ -908,7 +1136,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 //@:bitmap("assets/img/character/doofus.png") class __ASSET__img_character_doofus_png extends openfl.display.BitmapData {}
 //@:file("assets/img/character/doofus.psd") class __ASSET__img_character_doofus_psd extends lime.utils.ByteArray {}
 //@:bitmap("assets/img/character/doofusTiles.png") class __ASSET__img_character_doofustiles_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Gripper1.png") class __ASSET__img_gripper1_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Gripper2.png") class __ASSET__img_gripper2_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Gripper3.png") class __ASSET__img_gripper3_png extends openfl.display.BitmapData {}
 //@:bitmap("assets/img/Items/Rock.png") class __ASSET__img_items_rock_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Joint1.png") class __ASSET__img_joint1_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Joint2.png") class __ASSET__img_joint2_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/Joint3.png") class __ASSET__img_joint3_png extends openfl.display.BitmapData {}
 //@:sound("assets/audio/GGJ_Maintheme.mp3") class __ASSET__audio_ggj_maintheme_mp3 extends openfl.media.Sound {}
 //
 //

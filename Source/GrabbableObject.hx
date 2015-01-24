@@ -1,6 +1,9 @@
 package ;
 
 import openfl.display.Sprite;
+import openfl.display.BitmapData;
+import openfl.display.Bitmap;
+import openfl.Assets;
 
 /**
  * ...
@@ -16,8 +19,11 @@ class GrabbableObject extends Sprite
 	}
 	function draw()
 	{
-		graphics.beginFill(0x000000);
-		graphics.drawCircle(0, 0, 40);
-		graphics.endFill();
+		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Items/Rock.png");
+		var bitmap = new Bitmap(bitmapData);
+		bitmap.y = -22;
+		bitmap.x = -39;
+		bitmap.scaleX = bitmap.scaleY = 1.5;
+		addChild(bitmap);
 	}
 }
