@@ -1,9 +1,11 @@
 package vehicle ;
 
+import openfl.display.Bitmap;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.events.KeyboardEvent;
 import openfl.ui.Keyboard;
+import openfl.Assets;
 
 /**
  * ...
@@ -34,7 +36,13 @@ class Vehicle extends Sprite
 		
 		for(platform in platforms){
 			addChild(platform);
+			platform.alpha = 0;
 		}
+		
+		var bitmap:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/TempBody.png"));
+		addChild(bitmap);
+		bitmap.x -= bitmap.width / 2;
+		bitmap.y -= bitmap.height / 2 -50;
 		
 		this.x = xPos;
 		this.y = yPos;
@@ -58,81 +66,179 @@ class Vehicle extends Sprite
 	}
 	
 	function draw()
-	{
+	{		
 		var platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 10, 500);
-		platform.x = 350;
-		platform.y = -250;
+		platform.graphics.drawRect( 0, 0, 141, 10);
+		platform.x = -64;
+		platform.y = 220;
 		platforms.push(platform);
 		
-		var platform = new Sprite();
+		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 10, 500);
-		platform.x = -350;
+		platform.graphics.drawRect( 0, 0, 10, 52);
+		platform.x = -74;
+		platform.y = 178;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 144, 10);
+		platform.x = -218;
+		platform.y = 178;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 10, 109);
+		platform.x = -218;
+		platform.y = 69;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 156, 30);
+		platform.x = -217;
+		platform.y = 44;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 166, 40);
+		platform.x = -377;
+		platform.y = 14;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 10, 115);
+		platform.x = -375;
+		platform.y = -100;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 60, 148);
+		platform.x = -375;
 		platform.y = -240;
 		platforms.push(platform);
 		
 		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 700, 10);
-		platform.x = -350;
-		platform.y = -250;
+		platform.graphics.drawRect( 0, 0, 800, 20);
+		platform.x = -375;
+		platform.y = -253;
 		platforms.push(platform);
 		
 		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 700, 10);
-		platform.x = -340;
-		platform.y = 250;
+		platform.graphics.drawRect( 0, 0, 110, 20);
+		platform.x = 186;
+		platform.y = -238;
 		platforms.push(platform);
-	
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 10, 320);
+		platform.x = 380;
+		platform.y = -253;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 150, 32);
+		platform.x = 262;
+		platform.y = -98;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 190, 10);
+		platform.x = 200;
+		platform.y = 50;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 10, 90);
+		platform.x = 195;
+		platform.y = 50;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 128, 10);
+		platform.x = 70;
+		platform.y = 136;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 10, 90);
+		platform.x = 70;
+		platform.y = 136;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 165, 40);
+		platform.x = -223;
+		platform.y = -147;
+		platforms.push(platform);
+		
+		platform = new Sprite();
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect( 0, 0, 220, 30);
+		platform.x = -93;
+		platform.y = -112;
+		platforms.push(platform);
+		
 		vehicleControl = new VehicleControl ("move_right");
 		addChild (vehicleControl);
-		vehicleControl.x = 100 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = 40 ;
+		vehicleControl.y = 195 ;
 		vehicleControles.push (vehicleControl);
 	
 		vehicleControl = new VehicleControl ("move_left");
 		addChild (vehicleControl);
-		vehicleControl.x = -100 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = -115 ;
+		vehicleControl.y = 160 ;
 		vehicleControles.push (vehicleControl);
 		
 		vehicleControl = new VehicleControl ("move_arm_1L");
 		addChild (vehicleControl);
-		vehicleControl.x = -100 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = -123 ;
+		vehicleControl.y = 35 ;
 		vehicleControles.push (vehicleControl);
 		
 		vehicleControl = new VehicleControl ("move_arm_1R");
 		addChild (vehicleControl);
-		vehicleControl.x = -200 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = -192 ;
+		vehicleControl.y = -150 ;
 		vehicleControles.push (vehicleControl);
 		
 		vehicleControl = new VehicleControl ("move_arm_2L");
 		addChild (vehicleControl);
-		vehicleControl.x = 100 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = 80 ;
+		vehicleControl.y = -130 ;
 		vehicleControles.push (vehicleControl);
 		
 		vehicleControl = new VehicleControl ("move_arm_2R");
 		addChild (vehicleControl);
-		vehicleControl.x = 200 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = 300 ;
+		vehicleControl.y = 40 ;
 		vehicleControles.push (vehicleControl);
 		
 		vehicleControl = new VehicleControl ("grab");
 		addChild (vehicleControl);
-		vehicleControl.x = 250 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = 120 ;
+		vehicleControl.y = 130 ;
 		vehicleControles.push (vehicleControl);
 		
 		vehicleControl = new VehicleControl ("release");
 		addChild (vehicleControl);
-		vehicleControl.x = -250 ;
-		vehicleControl.y = 250 ;
+		vehicleControl.x = -300 ;
+		vehicleControl.y = 0 ;
 		vehicleControles.push (vehicleControl);
 		
 	}

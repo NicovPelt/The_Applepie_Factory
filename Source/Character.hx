@@ -32,8 +32,8 @@ class Character extends Sprite
 	//var framesJump:Int = 1;
 	
 	var isGrounded:Bool = false;
-	var jumpSpeed:Int = 40;
-	var acceleration:Int = 4;
+	var jumpSpeed:Int = 25;
+	var acceleration:Int = 2;
 	var verticleSpeed:Int = 0;
 	var horizontalSpeed:Int = 0;
 	
