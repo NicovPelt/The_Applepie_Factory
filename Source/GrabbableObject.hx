@@ -11,12 +11,32 @@ import openfl.Assets;
  */
 class GrabbableObject extends Sprite
 {
-
+	
+	var gravity:Int;
+	var yVelocity:Int;
+	var xVelocity:Int;
+	var minGroundLevel:Int;
+	
 	public function new() 
 	{
 		super();
 		draw();
+		gravity = 4;
+		minGroundLevel = 900;
 	}
+	
+	public function update()
+	{
+		if (this.y < minGroundLevel)
+		{
+			yVelocity += gravity;
+		}
+		else
+		{
+			yVelocity = 0;
+		}
+	}
+	
 	function draw()
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Items/Rock.png");

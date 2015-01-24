@@ -58,8 +58,9 @@ class Game extends Sprite
 		vehicle.update();
 		//vehicle.armGrabber.update();
 		character2.update();
+		rock.update();
 		character.update();
-		
+
 		}
 	}
 }
