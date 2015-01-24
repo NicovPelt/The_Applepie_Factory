@@ -31,7 +31,7 @@ class Game extends Sprite
 		terrain = new Terrain();
 		addChild(terrain);
 		terrain.scaleX = terrain.scaleY = 1;
-		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
+		vehicle = new Vehicle(Std.int(stage.stageWidth/2), 700, terrain);
 		addChild(vehicle);
 		character = new Character(1, vehicle);
 		var characters = new Array<Character>();
@@ -43,7 +43,7 @@ class Game extends Sprite
 		vehicle.characters = characters;
 		
 		inited = true;
-
+		
 		terrain.addChild(rock);
 		vehicle.armGrabber.grabbableObjects.push(rock);
 		vehicle.armGrabber.terrain = terrain;

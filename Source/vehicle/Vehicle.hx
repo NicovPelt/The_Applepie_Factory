@@ -147,7 +147,6 @@ class Vehicle extends Sprite
 				if (character.hitTestObject(vehicleControl)) 
 				{
 					nonePressed = false;
-					trace (vehicleControl.controlType);
 					switch (vehicleControl.controlType) 
 					{
 						case "move_right" :
@@ -181,7 +180,6 @@ class Vehicle extends Sprite
 		if(nonePressed)
 		{
 			moveStop();
-			trace ("stop");
 		}
 	}
 	

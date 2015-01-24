@@ -23,7 +23,7 @@ class GrabbableObject extends Sprite
 		super();
 		draw();
 		gravity = 4;
-		minGroundLevel = 750;
+		minGroundLevel = 950;
 	}
 	
 	public function update()
@@ -44,7 +44,6 @@ class GrabbableObject extends Sprite
 		{
 			yVelocity = 0;
 		}
-		trace(this.y);
 	}
 	
 	function draw()
@@ -53,7 +52,6 @@ class GrabbableObject extends Sprite
 		var bitmap = new Bitmap(bitmapData);
 		bitmap.y = -bitmap.height/2;
 		bitmap.x = -bitmap.width/2;
-		bitmap.scaleX = bitmap.scaleY = 1.5;
 		addChild(bitmap);
 	}
 }
