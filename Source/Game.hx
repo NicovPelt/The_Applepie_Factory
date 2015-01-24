@@ -15,6 +15,7 @@ class Game extends Sprite
 	var character2:Character;
 	var vehicle:Vehicle;
 	var terrain:Terrain;
+	var rock:GrabbableObject = new GrabbableObject();
 	var inited:Bool;
 	
 	public function new() 
@@ -29,7 +30,7 @@ class Game extends Sprite
 		removeEventListener(Event.ADDED_TO_STAGE, init);
 		terrain = new Terrain();
 		addChild(terrain);
-		terrain.scaleX = terrain.scaleY = 2;
+		terrain.scaleX = terrain.scaleY = 1;
 		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
 		addChild(vehicle);
 		character = new Character(1, vehicle);
@@ -43,7 +44,7 @@ class Game extends Sprite
 		
 		inited = true;
 
-		addChild(rock);
+		terrain.addChild(rock);
 		vehicle.armGrabber.grabbableObjects.push(rock);
 		vehicle.armGrabber.terrain = terrain;
 		rock.x = 1000;
@@ -59,7 +60,7 @@ class Game extends Sprite
 		//vehicle.armGrabber.update();
 		character2.update();
 		character.update();
-
+		rock.update();
 		}
 	}
 }

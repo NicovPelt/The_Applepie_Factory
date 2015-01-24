@@ -12,7 +12,6 @@ import openfl.display.Sprite;
 class Terrain extends Sprite
 {
 	public var speed:Float = -4;
-	public var rock:GrabbableObject = new GrabbableObject();
 	var bitmap:Bitmap;
 	var bitmap2:Bitmap;
 	var bitmap3:Bitmap;
@@ -39,9 +38,6 @@ class Terrain extends Sprite
 		addChild(bitmap5);
 		addChild(bitmap4);
 		this.y = 0;
-		addChild(rock);
-		rock.x = 1000;
-		rock.y = 500;
 	}
 	
 	public function addObject(object:GrabbableObject) {
@@ -50,11 +46,11 @@ class Terrain extends Sprite
 	
 	public function update()
 	{
-		bitmap.x += speed * .6;
-		bitmap2.x += speed * .2;
-		bitmap3.x += speed * .1;
-		bitmap4.x += speed * 1;
-		bitmap5.x += speed * 1;
-		rock.update();
+		bitmap.x -= speed * .4;
+		bitmap2.x -= speed * .8;
+		bitmap3.x -= speed * .9;
+		this.x += speed;
+		//bitmap4.x += speed * 1;
+		//bitmap5.x += speed * 1;
 	}
 }

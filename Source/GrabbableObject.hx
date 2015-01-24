@@ -16,13 +16,14 @@ class GrabbableObject extends Sprite
 	var yVelocity:Int;
 	var xVelocity:Int;
 	var minGroundLevel:Int;
+	public var grabbed:Bool;
 	
 	public function new() 
 	{
 		super();
 		draw();
 		gravity = 4;
-		minGroundLevel = 900;
+		minGroundLevel = 750;
 	}
 	
 	public function update()
@@ -35,7 +36,15 @@ class GrabbableObject extends Sprite
 		{
 			yVelocity = 0;
 		}
-		this.y += yVelocity;
+		if (!grabbed)
+		{
+			this.y += yVelocity;
+		}
+		else
+		{
+			yVelocity = 0;
+		}
+		trace(this.y);
 	}
 	
 	function draw()
