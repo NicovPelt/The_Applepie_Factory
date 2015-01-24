@@ -23,7 +23,7 @@ class Game extends Sprite
 		addChild(terrain);
 		var vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2));
 		addChild(vehicle);
-		var character:Character = new Character();
+		var character:Character = new Character(1);
 		addChild(character);
 	}
 }

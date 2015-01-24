@@ -5,6 +5,8 @@ import openfl.display.Tilesheet;
 import openfl.geom.Rectangle;
 import openfl.events.Event;
 import openfl.Assets;
+import openfl.events.KeyboardEvent;
+import openfl.ui.Keyboard;
 
 /**
  * ...
@@ -16,12 +18,23 @@ class Character extends Sprite
 	var tileHeight:Int = 32;
 	var tileWidth:Int = 32;
 	var tiles:Int = 1;
+	var keyJump:Int;
+	var keyLeft:Int;
+	var keyRight:Int;
 	
-	
-	public function new() 
+	public function new(charNo:Int) 
 	{
 		super();
 		addEventListener(Event.ADDED_TO_STAGE, init);
+		if (charNo == 1) {
+			keyJump = Keyboard.W;
+			keyLeft = Keyboard.A;
+			keyRight = Keyboard.D;
+		}else if (charNo == 2) {
+			keyJump = Keyboard.UP;
+			keyLeft = Keyboard.LEFT;
+			keyRight = Keyboard.RIGHT;
+		}
 		
 	}
 	
