@@ -96,7 +96,6 @@ class Character extends Sprite
 			isGrounded = false;
 			jumped = true;
 		}
-		trace(isGrounded);
 		if (jumped) {
 			animateJump();
 		}
