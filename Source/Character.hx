@@ -18,9 +18,9 @@ class Character extends Sprite
 {	
 	var vehicle:Vehicle;
 
-	var character:Tilesheet = new Tilesheet(Assets.getBitmapData("img/character/doofusTiles.png"));
+	var character:Tilesheet;
 	var tileHeight:Int = 64;
-	var tileWidth:Int = 64;
+	var tileWidth:Int = 47;
 	var tiles:Int = 18;
 	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
@@ -45,10 +45,12 @@ class Character extends Sprite
 		
 		addEventListener(Event.ADDED_TO_STAGE, init);
 		if (charNo == 1) {
+			character = new Tilesheet(Assets.getBitmapData("img/character/doofusTiles.png"));
 			keyJump = Keyboard.W;
 			keyLeft = Keyboard.A;
 			keyRight = Keyboard.D;
 		}else if (charNo == 2) {
+			character = new Tilesheet(Assets.getBitmapData("img/character/dimwitTiles.png"));
 			keyJump = Keyboard.UP;
 			keyLeft = Keyboard.LEFT;
 			keyRight = Keyboard.RIGHT;

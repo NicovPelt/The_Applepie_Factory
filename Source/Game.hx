@@ -12,6 +12,7 @@ import openfl.events.Event;
 class Game extends Sprite
 {
 	var character:Character;
+	var character2:Character;
 	var vehicle:Vehicle;
 	var terrain:Terrain;
 	var rock:GrabbableObject = new GrabbableObject();
@@ -33,8 +34,10 @@ class Game extends Sprite
 		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
 		addChild(vehicle);
 		character = new Character(1, vehicle);
-		
 		addChild(character);
+		character2 = new Character(2, vehicle);
+		addChild(character2);
+		
 		inited = true;
 		addChild(rock);
 		rock.x = 1000;
@@ -49,6 +52,7 @@ class Game extends Sprite
 		vehicle.update();
 		vehicle.armGrabber.grabObject(rock);
 		character.update();
+		character2.update();
 		}
 	}
 }

@@ -63,6 +63,10 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("assets/img/character/dimwitTiles.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("assets/img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
@@ -132,6 +136,10 @@ class ApplicationMain {
 		
 		
 		urls.push ("img/Background/level_1_ground_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/character/dimwitTiles.png");
 		types.push (AssetType.IMAGE);
 		
 		
@@ -207,6 +215,8 @@ class ApplicationMain {
 			}
 			
 		}
+		
+		preloader = null;
 		
 		
 		
