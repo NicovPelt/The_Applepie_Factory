@@ -18,6 +18,8 @@ class Terrain extends Sprite
 	var bitmap3:Bitmap;
 	var bitmap4:Bitmap;
 	var bitmap5:Bitmap;
+	public var gaps:Array<Gap> = new Array<Gap>();
+	
 	
 	
 	public function new() 
@@ -39,11 +41,15 @@ class Terrain extends Sprite
 		addChild(bitmap);
 		addChild(bitmap5);
 		addChild(bitmap4);
+		
 		this.y = 0;
 	}
 	
 	public function addObject(object:GrabbableObject) {
 		addChild(object);
+		var gap:Gap = new Gap(object);
+		addChild(gap);
+		gaps.push(gap);
 	}
 	
 	public function update()
@@ -54,5 +60,8 @@ class Terrain extends Sprite
 		this.x += speed;
 		//bitmap4.x += speed * 1;
 		//bitmap5.x += speed * 1;
+		for (gap in gaps) {
+			gap.update();
+		}
 	}
 }
