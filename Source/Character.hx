@@ -15,14 +15,14 @@ import openfl.ui.Keyboard;
 class Character extends Sprite
 {
 	var character:Tilesheet = new Tilesheet(Assets.getBitmapData("img/character/doofusTiles.png"));
-	var tileHeight:Int = 32;
-	var tileWidth:Int = 32;
-	var tiles:Int = 12;
+	var tileHeight:Int = 64;
+	var tileWidth:Int = 64;
+	var tiles:Int = 18;
 	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
 	var keyLeft:Int;
 	var keyRight:Int;
-	var xSpeed = 10;
+	var xSpeed = 5;
 	var ySpeed = 0;
 	var yMaxSpeed = 15;
 	var frame:Int = 0;
@@ -58,6 +58,8 @@ class Character extends Sprite
 	
 	public function update() {
 		move();
+		this.width = 64;
+		this.height = 64;
 	}
 	//Move Section	
 	function onKeyDown(e:KeyboardEvent):Void {
@@ -76,6 +78,7 @@ class Character extends Sprite
 			
 		}else {
 			drawCharacter();
+			frame = 0;
 		}
 	}
 	
@@ -102,22 +105,26 @@ class Character extends Sprite
 	}
 	function animateRight() {
 		this.graphics.clear();
-		if (frame + 3 < tiles) {
-			frame += 3;
-		}else {
-			frame = 1;
-		}
-		trace (frame);
-		character.drawTiles( this.graphics, [ 0, 0, frame], true );
+		if (frame % 3 != 1) { frame = 1; }
+			if (frame + 3 < tiles) {
+				frame += 3;
+			}else {
+				frame = 1;
+			}
+			trace (frame);
+			character.drawTiles( this.graphics, [ 0, 0, frame], true );
+		
 	}
 		function animateLeft() {
 		this.graphics.clear();
-		if (frame + 3 < tiles) {
-			frame += 3;
-		}else {
-			frame = 2;
-		}
-		trace (frame);
-		character.drawTiles( this.graphics, [ 0, 0, frame], true );
+		if (frame % 3 != 2) { frame = 2;}
+			if (frame + 3 < tiles) {
+				frame += 3;
+			}else {
+				frame = 2;
+			}
+			trace (frame);
+			character.drawTiles( this.graphics, [ 0, 0, frame], true );
+		
 	}
 }

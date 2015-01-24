@@ -27,6 +27,26 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/img/Background/Level_1_background_1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/Level_1_background_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/Level_1_background_space.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/level_1_ground.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/level_1_ground_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("assets/img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
@@ -39,6 +59,30 @@ class ApplicationMain {
 		types.push (AssetType.IMAGE);
 		
 		
+		urls.push ("assets/img/Items/Rock.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/Level_1_background_1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/Level_1_background_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/Level_1_background_space.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/level_1_ground.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/level_1_ground_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
@@ -48,6 +92,10 @@ class ApplicationMain {
 		
 		
 		urls.push ("img/character/doofusTiles.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Items/Rock.png");
 		types.push (AssetType.IMAGE);
 		
 		
@@ -98,10 +146,10 @@ class ApplicationMain {
 		config = {
 			
 			antialiasing: Std.int (0),
-			background: Std.int (16777215),
+			background: Std.int (0),
 			borderless: false,
 			depthBuffer: false,
-			fps: Std.int (30),
+			fps: Std.int (60),
 			fullscreen: true,
 			height: Std.int (1080),
 			orientation: "",
@@ -115,7 +163,7 @@ class ApplicationMain {
 		
 		#if js
 		#if munit
-		flash.Lib.embed (null, 1920, 1080, "FFFFFF");
+		flash.Lib.embed (null, 1920, 1080, "000000");
 		#end
 		#else
 		create ();
