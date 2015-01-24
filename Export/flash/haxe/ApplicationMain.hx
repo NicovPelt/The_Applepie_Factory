@@ -27,6 +27,30 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/audio/GGJ_Maintheme.mp3");
+		types.push (AssetType.MUSIC);
+		
+		
+		urls.push ("assets/img/Background/Level_1_background_1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/Level_1_background_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/Level_1_background_space.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/level_1_ground.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Background/level_1_ground_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("assets/img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
@@ -35,12 +59,48 @@ class ApplicationMain {
 		types.push (AssetType.BINARY);
 		
 		
+		urls.push ("assets/img/character/doofusTiles.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/Items/Rock.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/Level_1_background_1.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/Level_1_background_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/Level_1_background_space.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/level_1_ground.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Background/level_1_ground_2.png");
+		types.push (AssetType.IMAGE);
+		
+		
 		urls.push ("img/character/doofus.png");
 		types.push (AssetType.IMAGE);
 		
 		
 		urls.push ("img/character/doofus.psd");
 		types.push (AssetType.BINARY);
+		
+		
+		urls.push ("img/character/doofusTiles.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("img/Items/Rock.png");
+		types.push (AssetType.IMAGE);
 		
 		
 		

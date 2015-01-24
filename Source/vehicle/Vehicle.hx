@@ -34,9 +34,9 @@ class Vehicle extends Sprite
 	{
 		var platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 20, 100);
-		platform.x = 50;
-		platform.y = 0;
+		platform.graphics.drawRect( 0, 0, 20, 200);
+		platform.x = 150;
+		platform.y = -100;
 		platforms.push(platform);
 		
 		platform = new Sprite();
