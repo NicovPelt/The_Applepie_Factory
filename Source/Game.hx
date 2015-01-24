@@ -44,6 +44,8 @@ class Game extends Sprite
 		
 		inited = true;
 		addChild(rock);
+		vehicle.armGrabber.grabbableObjects.push(rock);
+		vehicle.armGrabber.terrain = terrain;
 		rock.x = 1000;
 		rock.y = 500;
 	}
@@ -54,7 +56,7 @@ class Game extends Sprite
 		{
 		terrain.update();
 		vehicle.update();
-		vehicle.armGrabber.grabObject(rock);
+		//vehicle.armGrabber.update();
 		character2.update();
 		character.update();
 		

@@ -40,6 +40,10 @@ class Terrain extends Sprite
 		this.y = 0;
 	}
 	
+	public function addObject(object:GrabbableObject) {
+		addChild(object);
+	}
+	
 	public function update()
 	{
 		bitmap.x += speed * .6;
