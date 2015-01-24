@@ -188,7 +188,7 @@ class Vehicle extends Sprite
 		
 		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
-		platform.graphics.drawRect( 0, 0, 220, 30);
+		platform.graphics.drawRect( 0, 0, 220, 35);
 		platform.x = -93;
 		platform.y = -112;
 		platforms.push(platform);
