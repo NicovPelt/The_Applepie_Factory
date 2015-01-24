@@ -122,7 +122,12 @@ class Character extends Sprite
 			
 			}
 		}
-		if (isGrounded) {
+			for (vehicleControl in vehicle.vehicleControles) {
+			if (hitTestObject(vehicleControl)) 
+			{
+				
+				trace (vehicleControl.controlType);
+			}
 			
 		}
 		
