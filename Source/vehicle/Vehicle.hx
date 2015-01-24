@@ -8,6 +8,8 @@ import openfl.display.Sprite;
  */
 class Vehicle extends Sprite
 {
+	
+	public var platform:Sprite;
 	var terrain:Terrain;
 	var speed:Int = 4;
 	var arm = new ArmSegment();
@@ -17,7 +19,13 @@ class Vehicle extends Sprite
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
 		super();
+		
+		platform = new Sprite();
+		
 		draw();
+		
+		addChild(platform);
+		
 		this.x = xPos;
 		this.y = yPos;
 		terrain = terrainRef;
@@ -34,6 +42,10 @@ class Vehicle extends Sprite
 	
 	function draw()
 	{
+		
+		platform.graphics.beginFill(0x00ff00);
+		platform.graphics.drawRect(100,100,200,10);
+		
 		graphics.beginFill(0x00ff00);
 		graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
 		graphics.endFill();
