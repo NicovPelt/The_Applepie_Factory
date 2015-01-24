@@ -13,6 +13,9 @@ class ArmGrabber extends Sprite
 {
 	var grabbing:Bool = false;
 	var grabbed:GrabbableObject;
+	public var grabbableObjects:Array<GrabbableObject> = new Array<GrabbableObject>();
+	public var terrain:Terrain;
+	
 	public function new() 
 	{
 		super();
@@ -40,21 +43,27 @@ class ArmGrabber extends Sprite
 		
 	}
 	
-	public function grabObject(object:GrabbableObject)
+	public function grabObject()
 	{
-		if (this.hitTestObject(object))
-		{
-			grabbed = object;
-			grabbing = true;
-			addChild(grabbed);
-			grabbed.x = 50;
-			grabbed.y = 0;
+		for(object in grabbableObjects){
+			if (this.hitTestObject(object) && !grabbing)
+			{
+				grabbed = object;
+				grabbing = true;
+				addChild(grabbed);
+				grabbed.x = 50;
+				grabbed.y = 0;
+			}
 		}
 	}
 	
 	public function dropObject()
 	{
-		
+		if(grabbing){
+			grabbing = false;
+			terrain.addObject(grabbed);
+			grabbed = null;
+		}
 	}
 	
 	public function update()

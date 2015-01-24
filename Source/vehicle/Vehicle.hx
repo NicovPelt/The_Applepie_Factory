@@ -123,6 +123,18 @@ class Vehicle extends Sprite
 		vehicleControl.y = 250 ;
 		vehicleControles.push (vehicleControl);
 		
+		vehicleControl = new VehicleControl ("grab");
+		addChild (vehicleControl);
+		vehicleControl.x = 250 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
+		
+		vehicleControl = new VehicleControl ("release");
+		addChild (vehicleControl);
+		vehicleControl.x = -250 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
+		
 	}
 	public function update()
 	{
@@ -155,6 +167,12 @@ class Vehicle extends Sprite
 							break ;
 						case "move_arm_2R" :
 							moveArm2R();
+							break ;
+						case "grab" :
+							grab();
+							break ;
+						case "release" :
+							release();
 							break ;
 					}
 				}	
@@ -198,5 +216,13 @@ class Vehicle extends Sprite
 	{
 		arm2.rotation += 5;
 		armGrabber.rotation -= 5;
+	}
+	function grab()
+	{
+		armGrabber.grabObject();
+	}
+	function release()
+	{
+		armGrabber.dropObject();
 	}
 }
