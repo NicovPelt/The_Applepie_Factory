@@ -50,10 +50,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/character/doofus.png", AssetType.IMAGE);
 		path.set ("assets/img/character/doofus.psd", "assets/img/character/doofus.psd");
 		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
+		path.set ("assets/img/character/doofusTiles.png", "assets/img/character/doofusTiles.png");
+		type.set ("assets/img/character/doofusTiles.png", AssetType.IMAGE);
 		path.set ("img/character/doofus.png", "img/character/doofus.png");
 		type.set ("img/character/doofus.png", AssetType.IMAGE);
 		path.set ("img/character/doofus.psd", "img/character/doofus.psd");
 		type.set ("img/character/doofus.psd", AssetType.BINARY);
+		path.set ("img/character/doofusTiles.png", "img/character/doofusTiles.png");
+		type.set ("img/character/doofusTiles.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
@@ -65,12 +69,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/character/doofus.psd";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
+		id = "assets/img/character/doofusTiles.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "img/character/doofus.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/character/doofus.psd";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
+		id = "img/character/doofusTiles.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		
 		
 		#else
@@ -82,9 +92,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -712,7 +726,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 #elseif html5
+
+
 
 
 

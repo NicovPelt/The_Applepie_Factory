@@ -24,6 +24,7 @@ class Game extends Sprite
 	//Called when the Game Class is added to the stage by the main class
 	function init(e:Event) 
 	{
+		if(!inited){
 		terrain = new Terrain();
 		addChild(terrain);
 		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
@@ -31,6 +32,7 @@ class Game extends Sprite
 		character = new Character(1);
 		addChild(character);
 		inited = true;
+		}
 	}
 	
 	public function update()

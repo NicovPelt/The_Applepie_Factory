@@ -14,10 +14,10 @@ import openfl.ui.Keyboard;
  */
 class Character extends Sprite
 {
-	var character:Tilesheet = new Tilesheet(Assets.getBitmapData("img/character/doofus.png"));
+	var character:Tilesheet = new Tilesheet(Assets.getBitmapData("img/character/doofusTiles.png"));
 	var tileHeight:Int = 32;
 	var tileWidth:Int = 32;
-	var tiles:Int = 1;
+	var tiles:Int = 12;
 	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
 	var keyLeft:Int;
@@ -25,6 +25,9 @@ class Character extends Sprite
 	var xSpeed = 10;
 	var ySpeed = 0;
 	var yMaxSpeed = 15;
+	var frame:Int = 0;
+	var framesWalk:Int = 2;
+	var framesJump:Int = 1;
 	
 	public function new(charNo:Int) 
 	{
@@ -49,6 +52,8 @@ class Character extends Sprite
 		drawCharacter();
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+		this.x = (stage.stageWidth - this.width) / 2;
+		this.y = (stage.stageHeight - this.height) /2;
 	}
 	
 	public function update() {
@@ -64,8 +69,13 @@ class Character extends Sprite
 	function move() {
 		if (keys[keyRight]) {
 			this.x += xSpeed;
+			animateRight();
 		}else if(keys[keyLeft]) {
 			this.x -= xSpeed;
+			animateLeft();
+			
+		}else {
+			drawCharacter();
 		}
 	}
 	
@@ -73,18 +83,41 @@ class Character extends Sprite
 	function drawCharacter():Void {
 		this.graphics.clear();
 		character.drawTiles( this.graphics, [ 0, 0, 0], true );
-		this.x = (stage.stageWidth - this.width) / 2;
-		this.y = (stage.stageHeight - this.height) /2;
-		
 	}
 	function initTiles():Void {
 		var column:Int = 0;
 		var row:Int = 0;
-		for( i in 0...tiles ){
+		for( i in 0...(tiles) ){
 			var charRect:Rectangle = new Rectangle( tileWidth * column, tileHeight * row, tileWidth, tileHeight );
+			trace(column);
 			character.addTileRect( charRect );
-			row = Math.ceil( i / 3 );
-			column = i % 3;
+			if (column + 1 >= 3) {
+				row++;
+				column = 0;
+			}else {
+				column++;
+			}
+			
 		}
+	}
+	function animateRight() {
+		this.graphics.clear();
+		if (frame + 3 < tiles) {
+			frame += 3;
+		}else {
+			frame = 1;
+		}
+		trace (frame);
+		character.drawTiles( this.graphics, [ 0, 0, frame], true );
+	}
+		function animateLeft() {
+		this.graphics.clear();
+		if (frame + 3 < tiles) {
+			frame += 3;
+		}else {
+			frame = 2;
+		}
+		trace (frame);
+		character.drawTiles( this.graphics, [ 0, 0, frame], true );
 	}
 }

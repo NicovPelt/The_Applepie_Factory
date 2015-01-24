@@ -44,11 +44,47 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/img/character/doofus.png", __ASSET__assets_img_character_doofus_png);
+		type.set ("assets/img/character/doofus.png", AssetType.IMAGE);
+		className.set ("assets/img/character/doofus.psd", __ASSET__assets_img_character_doofus_psd);
+		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
+		className.set ("assets/img/character/doofusTiles.png", __ASSET__assets_img_character_doofustiles_png);
+		type.set ("assets/img/character/doofusTiles.png", AssetType.IMAGE);
+		className.set ("img/character/doofus.png", __ASSET__img_character_doofus_png);
+		type.set ("img/character/doofus.png", AssetType.IMAGE);
+		className.set ("img/character/doofus.psd", __ASSET__img_character_doofus_psd);
+		type.set ("img/character/doofus.psd", AssetType.BINARY);
+		className.set ("img/character/doofusTiles.png", __ASSET__img_character_doofustiles_png);
+		type.set ("img/character/doofusTiles.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/img/character/doofus.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/character/doofus.psd";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/img/character/doofusTiles.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/character/doofus.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/character/doofus.psd";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "img/character/doofusTiles.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		
 		
 		#else
@@ -56,11 +92,35 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if openfl
 		
 		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		/*var useManifest = false;
+		
+		className.set ("assets/img/character/doofus.png", __ASSET__assets_img_character_doofus_png);
+		type.set ("assets/img/character/doofus.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/character/doofus.psd", __ASSET__assets_img_character_doofus_psd);
+		type.set ("assets/img/character/doofus.psd", AssetType.BINARY);
+		
+		className.set ("assets/img/character/doofusTiles.png", __ASSET__assets_img_character_doofustiles_png);
+		type.set ("assets/img/character/doofusTiles.png", AssetType.IMAGE);
+		
+		className.set ("img/character/doofus.png", __ASSET__img_character_doofus_png);
+		type.set ("img/character/doofus.png", AssetType.IMAGE);
+		
+		className.set ("img/character/doofus.psd", __ASSET__img_character_doofus_psd);
+		type.set ("img/character/doofus.psd", AssetType.BINARY);
+		
+		className.set ("img/character/doofusTiles.png", __ASSET__img_character_doofustiles_png);
+		type.set ("img/character/doofusTiles.png", AssetType.IMAGE);
 		*/
 		var useManifest = true;
 		
@@ -508,6 +568,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 			var bytes = ByteArray.readFile ("../res/manifest");
 			#elseif emscripten
 			var bytes = ByteArray.readFile ("assets/manifest");
+			#elseif (mac && java)
+			var bytes = ByteArray.readFile ("../Resources/manifest");
 			#else
 			var bytes = ByteArray.readFile ("manifest");
 			#end
@@ -633,11 +695,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofus_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_img_character_doofustiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_character_doofus_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_character_doofus_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__img_character_doofustiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 
 
 #elseif html5
 
 #if openfl
+
+
+
+
+
+
 
 #end
 
@@ -650,6 +724,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 //
+//@:bitmap("Assets/img/character/doofus.png") class __ASSET__assets_img_character_doofus_png extends openfl.display.BitmapData {}
+//@:file("Assets/img/character/doofus.psd") class __ASSET__assets_img_character_doofus_psd extends lime.utils.ByteArray {}
+//@:bitmap("Assets/img/character/doofusTiles.png") class __ASSET__assets_img_character_doofustiles_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/character/doofus.png") class __ASSET__img_character_doofus_png extends openfl.display.BitmapData {}
+//@:file("assets/img/character/doofus.psd") class __ASSET__img_character_doofus_psd extends lime.utils.ByteArray {}
+//@:bitmap("assets/img/character/doofusTiles.png") class __ASSET__img_character_doofustiles_png extends openfl.display.BitmapData {}
 //
 //
 
