@@ -14,12 +14,14 @@ class Vehicle extends Sprite
 	
 	public var vehicleControles:Array<VehicleControl>;
 	public var platforms:Array<Sprite>;
+	public var characters:Array<Character> = new Array<Character>();
 	var terrain:Terrain;
 	var speed:Int = 4;
 	var arm = new ArmSegment("assets/img/Arm1.png");
 	var arm2 = new ArmSegment("assets/img/Arm2.png");
 	public var armGrabber = new ArmGrabber();
-	var vehicleControl = new VehicleControl ();
+	var vehicleControl:VehicleControl;
+	var nonePressed:Bool = true;
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
@@ -52,19 +54,7 @@ class Vehicle extends Sprite
 	function init(e:Event)
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, init);
-		stage.addEventListener(KeyboardEvent.KEY_DOWN, changeMove);
-	}
-	
-	function changeMove(e:KeyboardEvent)
-	{
-		if (e.keyCode == Keyboard.LEFT)
-		{
-			moveLeft();
-		}
-		else if (e.keyCode == Keyboard.RIGHT)
-		{
-			moveRight();
-		}
+		//stage.addEventListener(KeyboardEvent.KEY_DOWN, changeMove);
 	}
 	
 	function draw()
@@ -96,24 +86,85 @@ class Vehicle extends Sprite
 		platform.x = -340;
 		platform.y = 250;
 		platforms.push(platform);
-		//graphics.beginFill(0x00ff00);
-		//graphics.drawRoundRect(-100, -100, 200, 200, 10, 10);
-		//graphics.endFill();
 	
+		vehicleControl = new VehicleControl ("move_right");
+		addChild (vehicleControl);
+		vehicleControl.x = 100 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
+	
+		vehicleControl = new VehicleControl ("move_left");
 		addChild (vehicleControl);
 		vehicleControl.x = -100 ;
-		vehicleControl.y = 0 ;
+		vehicleControl.y = 250 ;
 		vehicleControles.push (vehicleControl);
-		vehicleControl.controlType = "move_right" ;
 		
+		vehicleControl = new VehicleControl ("move_arm_1L");
+		addChild (vehicleControl);
+		vehicleControl.x = -100 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
 		
-		}
+		vehicleControl = new VehicleControl ("move_arm_1R");
+		addChild (vehicleControl);
+		vehicleControl.x = -200 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
+		
+		vehicleControl = new VehicleControl ("move_arm_2L");
+		addChild (vehicleControl);
+		vehicleControl.x = 100 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
+		
+		vehicleControl = new VehicleControl ("move_arm_2R");
+		addChild (vehicleControl);
+		vehicleControl.x = 200 ;
+		vehicleControl.y = 250 ;
+		vehicleControles.push (vehicleControl);
+		
+	}
 	public function update()
 	{
-		arm.rotation += 5;
-		arm2.rotation -= 5;
 		armGrabber.update();
-		armGrabber.rotation += 5;
+		//armGrabber.rotation += 5;
+		
+		nonePressed = true;
+		for (vehicleControl in vehicleControles) {
+			for(character in characters){
+				if (character.hitTestObject(vehicleControl)) 
+				{
+					nonePressed = false;
+					trace (vehicleControl.controlType);
+					switch (vehicleControl.controlType) 
+					{
+						case "move_right" :
+							moveRight();
+							break ;
+						case "move_left" :
+							moveLeft();
+							break ;
+						case "move_arm_1L" :
+							moveArm1L();
+							break ;
+						case "move_arm_1R" :
+							moveArm1R();
+							break ;
+						case "move_arm_2L" :
+							moveArm2L();
+							break ;
+						case "move_arm_2R" :
+							moveArm2R();
+							break ;
+					}
+				}	
+			}
+		}
+		if(nonePressed)
+		{
+			moveStop();
+			trace ("stop");
+		}
 	}
 	
 	function moveLeft()
@@ -123,5 +174,29 @@ class Vehicle extends Sprite
 	function moveRight()
 	{
 		terrain.speed = -speed;
+	}
+	function moveStop ()
+	{
+		terrain.speed = 0;
+	}
+	function moveArm1L()
+	{
+		arm.rotation -= 5;
+		armGrabber.rotation += 5;
+	}
+	function moveArm1R()
+	{
+		arm.rotation += 5;
+		armGrabber.rotation -= 5;
+	}
+	function moveArm2L()
+	{
+		arm2.rotation -= 5;
+		armGrabber.rotation += 5;
+	}
+	function moveArm2R()
+	{
+		arm2.rotation += 5;
+		armGrabber.rotation -= 5;
 	}
 }

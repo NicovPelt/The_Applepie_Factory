@@ -126,14 +126,6 @@ class Character extends Sprite
 			
 			}
 		}
-			for (vehicleControl in vehicle.vehicleControles) {
-			if (hitTestObject(vehicleControl)) 
-			{
-				
-				trace (vehicleControl.controlType);
-			}
-			
-		}
 		
 	}
 	

@@ -36,6 +36,7 @@ class ArmGrabber extends Sprite
 		bitmap3.y = 50 - 15;
 		bitmap3.x = -12;
 		addChild(bitmap3);
+		rotation += 90;
 		
 	}
 	
