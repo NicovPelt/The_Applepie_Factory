@@ -23,7 +23,7 @@ class GrabbableObject extends Sprite
 		super();
 		draw();
 		gravity = 4;
-		minGroundLevel = 950;
+		minGroundLevel = 980;
 	}
 	
 	public function update()
@@ -35,6 +35,7 @@ class GrabbableObject extends Sprite
 		else
 		{
 			yVelocity = 0;
+			this.y = minGroundLevel;
 		}
 		if (!grabbed)
 		{

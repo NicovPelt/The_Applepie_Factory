@@ -185,7 +185,11 @@ class Vehicle extends Sprite
 	
 	function moveLeft()
 	{
-		terrain.speed = speed;
+		if (hitTestObject(terrain.gap) == false || terrain.gap.filled == true)
+		{
+			terrain.speed = speed;
+		}
+		else terrain.
 	}
 	function moveRight()
 	{
