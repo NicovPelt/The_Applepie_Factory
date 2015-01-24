@@ -17,8 +17,8 @@ class Vehicle extends Sprite
 	public var characters:Array<Character> = new Array<Character>();
 	var terrain:Terrain;
 	var speed:Int = 4;
-	var arm = new ArmSegment("assets/img/Arm1.png");
-	var arm2 = new ArmSegment("assets/img/Arm2.png");
+	var arm = new ArmSegment("assets/img/Arm1_2X.png");
+	var arm2 = new ArmSegment("assets/img/Arm2_2X.png");
 	public var armGrabber = new ArmGrabber();
 	var vehicleControl:VehicleControl;
 	var nonePressed:Bool = true;
@@ -43,11 +43,11 @@ class Vehicle extends Sprite
 		addChild(arm);
 		arm.addChild(arm2);
 		arm2.addChild(armGrabber);
-		arm2.x = arm.width - 50;
+		arm2.x = arm.width - 100;
 		arm2.y = 0;
-		armGrabber.x = arm2.width - 50;
+		armGrabber.x = arm2.width - 100;
 		arm.x = 0;
-		arm.y = -100;
+		arm.y = -200;
 		addEventListener(Event.ADDED_TO_STAGE, init);
 	}
 	
