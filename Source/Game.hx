@@ -34,9 +34,13 @@ class Game extends Sprite
 		vehicle = new Vehicle(Std.int(stage.stageWidth/2), Std.int(stage.stageHeight/2), terrain);
 		addChild(vehicle);
 		character = new Character(1, vehicle);
+		var characters = new Array<Character>();
 		addChild(character);
+		characters.push(character);
 		character2 = new Character(2, vehicle);
 		addChild(character2);
+		characters.push(character2);
+		vehicle.characters = characters;
 		
 		inited = true;
 		addChild(rock);
@@ -51,8 +55,9 @@ class Game extends Sprite
 		terrain.update();
 		vehicle.update();
 		vehicle.armGrabber.grabObject(rock);
-		character.update();
 		character2.update();
+		character.update();
+		
 		}
 	}
 }

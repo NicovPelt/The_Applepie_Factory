@@ -14,12 +14,14 @@ class Vehicle extends Sprite
 	
 	public var vehicleControles:Array<VehicleControl>;
 	public var platforms:Array<Sprite>;
+	public var characters:Array<Character> = new Array<Character>();
 	var terrain:Terrain;
 	var speed:Int = 4;
 	var arm = new ArmSegment("assets/img/Arm1.png");
 	var arm2 = new ArmSegment("assets/img/Arm2.png");
 	public var armGrabber = new ArmGrabber();
 	var vehicleControl = new VehicleControl ();
+	var nonePressed:Bool = true;
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
@@ -52,23 +54,24 @@ class Vehicle extends Sprite
 	function init(e:Event)
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, init);
-		stage.addEventListener(KeyboardEvent.KEY_DOWN, changeMove);
+		//stage.addEventListener(KeyboardEvent.KEY_DOWN, changeMove);
 	}
 	
-	function changeMove(e:KeyboardEvent)
-	{
-		if (e.keyCode == Keyboard.LEFT)
-		{
-			moveLeft();
-		}
-		else if (e.keyCode == Keyboard.RIGHT)
-		{
-			moveRight();
-		}
-	}
+	//function changeMove(e:KeyboardEvent)
+	//{
+		//if (e.keyCode == Keyboard.LEFT)
+		//{
+			//moveLeft();
+		//}
+		//else if (e.keyCode == Keyboard.RIGHT)
+		//{
+			//moveRight();
+		//}
+	//}
 	
 	public function changeMoveControl (input:String)
 	{
+		trace(input);
 		switch (input) 
 		{
 			case "right" :
@@ -78,7 +81,6 @@ class Vehicle extends Sprite
 			case "stop" :
 				moveStop ();
 		}
-
 	}
 	
 	function draw()
@@ -132,6 +134,31 @@ class Vehicle extends Sprite
 		arm2.rotation -= 5;
 		armGrabber.update();
 		armGrabber.rotation += 5;
+		
+		nonePressed = true;
+		for (vehicleControl in vehicleControles) {
+			for(character in characters){
+				if (character.hitTestObject(vehicleControl)) 
+				{
+					nonePressed = false;
+					trace (vehicleControl.controlType);
+					switch (vehicleControl.controlType) 
+					{
+						case "move_right" :
+							changeMoveControl ("right");
+							break ;
+						case "move_left" :
+							changeMoveControl ("left");
+							break ;
+					}
+				}	
+			}
+		}
+		if(nonePressed)
+		{
+			changeMoveControl ("stop");
+			trace ("stop");
+		}
 	}
 	
 	function moveLeft()
