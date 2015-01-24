@@ -24,17 +24,17 @@ class ArmGrabber extends Sprite
 	
 	function draw()
 	{
-		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Gripper1.png");
+		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Gripper1_2X.png");
 		var bitmap = new Bitmap(bitmapData);
-		bitmap.y = -50;
-		bitmap.x = -12;
+		bitmap.y = -bitmap.height/2;
+		bitmap.x = -bitmap.width/2;
 		addChild(bitmap);
-		var bitmapData2:BitmapData = Assets.getBitmapData("assets/img/Gripper2.png");
+		var bitmapData2:BitmapData = Assets.getBitmapData("assets/img/Gripper2_2X.png");
 		var bitmap2 = new Bitmap(bitmapData2);
 		bitmap2.y = -50;
 		bitmap2.x = -12;
 		addChild(bitmap2);
-		var bitmapData3:BitmapData = Assets.getBitmapData("assets/img/Gripper3.png");
+		var bitmapData3:BitmapData = Assets.getBitmapData("assets/img/Gripper3_2X.png");
 		var bitmap3 = new Bitmap(bitmapData3);
 		bitmap3.y = 50 - 15;
 		bitmap3.x = -12;
@@ -53,6 +53,7 @@ class ArmGrabber extends Sprite
 				addChild(grabbed);
 				grabbed.x = 50;
 				grabbed.y = 0;
+				grabbed.rotation -= 90;
 				grabbed.grabbed = true;
 			}
 		}
@@ -68,6 +69,7 @@ class ArmGrabber extends Sprite
 			point = terrain.globalToLocal(point);
 			grabbed.x = point.x;
 			grabbed.y = point.y;
+			grabbed.rotation += 90;
 			grabbed.grabbed = false;
 			//grabbed = null;
 			

@@ -21,7 +21,7 @@ class Character extends Sprite
 	var character:Tilesheet;
 	var tileHeight:Int = 64;
 	var tileWidth:Int;
-	var tiles:Int = 18;
+	var tiles:Int = 24;
 	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
 	var keyLeft:Int;
@@ -36,6 +36,7 @@ class Character extends Sprite
 	var acceleration:Int = 2;
 	var verticleSpeed:Int = 0;
 	var horizontalSpeed:Int = 0;
+	var jumped:Bool = false;
 	
 	public function new(charNo:Int, vehicle:Vehicle) 
 	{
@@ -93,6 +94,10 @@ class Character extends Sprite
 		if (keys[keyJump] && isGrounded) {
 			verticleSpeed -= jumpSpeed;
 			isGrounded = false;
+			jumped = true;
+		}
+		if (jumped) {
+			animateJump();
 		}
 	}
 	
@@ -110,6 +115,7 @@ class Character extends Sprite
 			if (!isGrounded) {
 				if (hitTestObject(platform) && (this.y + this.height) > point.y && verticleSpeed > 0 && !(this.y + this.height > point.y + verticleSpeed)) {//bottom collision detect
 					isGrounded = true;
+					jumped = false;
 					verticleSpeed = 0;
 					this.y = point.y - this.height;
 				} else if (hitTestObject(platform) && this.y < (point.y + platform.height) && verticleSpeed < 0 && !(this.y < point.y + platform.height + verticleSpeed)){ //top collision detect
@@ -126,7 +132,6 @@ class Character extends Sprite
 			
 			}
 		}
-		
 	}
 	
 	// Graphics Section
@@ -141,7 +146,7 @@ class Character extends Sprite
 		for( i in 0...(tiles) ){
 			var charRect:Rectangle = new Rectangle( tileWidth * column, tileHeight * row, tileWidth, tileHeight );
 			character.addTileRect( charRect );
-			if (column + 1 >= 3) {
+			if (column + 1 >= 4) {
 				row++;
 				column = 0;
 			}else {
@@ -152,9 +157,9 @@ class Character extends Sprite
 	}
 	function animateRight() {
 		this.graphics.clear();
-		if (frame % 3 != 1) { frame = 1; }
-			if (frame + 3 < tiles) {
-				frame += 3;
+		if (frame % 4 != 1) { frame = 1; }
+			if (frame + 4 < tiles) {
+				frame += 4;
 			}else {
 				frame = 1;
 			}
@@ -162,14 +167,26 @@ class Character extends Sprite
 		
 	}
 	function animateLeft() {
-	this.graphics.clear();
-	if (frame % 3 != 2) { frame = 2;}
-		if (frame + 3 < tiles) {
-			frame += 3;
-		}else {
-			frame = 2;
-		}
+		this.graphics.clear();
+		if (frame % 4 != 2) { frame = 2; }
+		if (frame + 4 < tiles) {
+				frame += 4;
+			}else {
+				frame = 2;
+			}
 		character.drawTiles( this.graphics, [ 0, 0, frame], true );
 		
+	}
+	function animateJump() {
+		this.graphics.clear();
+		if(!isGrounded){
+		if (frame % 4 != 3) { frame = 3; }
+		if (frame + 4 < tiles) {
+				frame += 4;
+			}else {
+				frame = 3;
+			}
+			character.drawTiles( this.graphics, [ 0, 0, frame], true );
+		}
 	}
 }

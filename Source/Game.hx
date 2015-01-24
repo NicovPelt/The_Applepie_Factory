@@ -18,6 +18,7 @@ class Game extends Sprite
 	var rock:GrabbableObject = new GrabbableObject();
 	var inited:Bool;
 	
+	
 	public function new() 
 	{
 		super();
@@ -49,6 +50,9 @@ class Game extends Sprite
 		vehicle.armGrabber.terrain = terrain;
 		rock.x = 1000;
 		rock.y = 500;
+		var gap:Gap = new Gap(rock);
+		terrain.addChild(gap);
+		terrain.gaps.push(gap);
 	}
 	
 	public function update()

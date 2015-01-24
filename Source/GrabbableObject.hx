@@ -23,7 +23,7 @@ class GrabbableObject extends Sprite
 		super();
 		draw();
 		gravity = 4;
-		minGroundLevel = 950;
+		minGroundLevel = 980;
 	}
 	
 	public function update()
@@ -35,6 +35,7 @@ class GrabbableObject extends Sprite
 		else
 		{
 			yVelocity = 0;
+			this.y = minGroundLevel;
 		}
 		if (!grabbed)
 		{
@@ -50,9 +51,8 @@ class GrabbableObject extends Sprite
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Items/Rock.png");
 		var bitmap = new Bitmap(bitmapData);
-		bitmap.y = -44;
-		bitmap.x = -78;
-		bitmap.scaleX = bitmap.scaleY = 1.5;
+		bitmap.y = -bitmap.height/2;
+		bitmap.x = -bitmap.width/2;
 		addChild(bitmap);
 	}
 }

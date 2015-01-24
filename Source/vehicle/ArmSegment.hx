@@ -21,8 +21,8 @@ class ArmSegment extends Sprite
 	{
 		var bitmapData:BitmapData = Assets.getBitmapData(image);
 		var bitmap = new Bitmap(bitmapData);
-		bitmap.y = -25;
-		bitmap.x = -25;
+		bitmap.y = -bitmap.height/2;
+		bitmap.x = -bitmap.height/2;
 		addChild(bitmap);
 	}
 }
