@@ -11,12 +11,14 @@ import openfl.display.Sprite;
  */
 class Terrain extends Sprite
 {
+	public var gap:Gap = new Gap();
 	public var speed:Float = -4;
 	var bitmap:Bitmap;
 	var bitmap2:Bitmap;
 	var bitmap3:Bitmap;
 	var bitmap4:Bitmap;
 	var bitmap5:Bitmap;
+	
 	
 	public function new() 
 	{
