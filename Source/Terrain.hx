@@ -63,7 +63,7 @@ class Terrain extends Sprite
 		particleSystem.y = 0 ;
 		particleSystem.particleSpawn_x = 440 ;
 		particleSystem.particleSpawn_y = 640 ;
-		//bitmap6.x = bitmap4.width;
+		bitmap6.x = bitmap4.width;
 	}
 	
 	public function addObject(object:GrabbableObject) 
