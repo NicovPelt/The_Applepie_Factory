@@ -51,11 +51,13 @@ class Terrain extends Sprite
 		addChild(bitmap4);
 		addChild(mountDoom);
 		this.y = 0;
+		
+		addChild(bitmap6);
 	}
 	function init(e:Event) {
 		mountDoom.y = stage.stageHeight - mountDoom.height;
 		
-		addChild(bitmap6);
+		
 	}
 	
 	public function addObject(object:GrabbableObject) 
