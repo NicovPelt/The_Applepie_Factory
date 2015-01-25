@@ -4,6 +4,7 @@ import openfl.Assets;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import openfl.display.Sprite;
+import openfl.events.Event;
 
 /**
  * ...
@@ -17,6 +18,7 @@ class Terrain extends Sprite
 	var bitmap3:Bitmap;
 	var bitmap4:Bitmap;
 	var bitmap5:Bitmap;
+	public var mountDoom:Bitmap;
 	public var gaps:Array<Gap> = new Array<Gap>();
 	
 	
@@ -24,6 +26,12 @@ class Terrain extends Sprite
 	public function new() 
 	{
 		super();
+		addEventListener(Event.ADDED_TO_STAGE, init);
+
+		
+		this.y = 0;
+	}
+	function init(e:Event) {
 		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Background/Level_1_background_1.png");
 		bitmap = new Bitmap(bitmapData);
 		var bitmapData2:BitmapData = Assets.getBitmapData("assets/img/Background/Level_1_background_2.png");
@@ -34,14 +42,15 @@ class Terrain extends Sprite
 		bitmap4 = new Bitmap(bitmapData4);
 		var bitmapData5:BitmapData = Assets.getBitmapData("assets/img/Background/level_1_ground_2.png");
 		bitmap5 = new Bitmap(bitmapData5);
+		mountDoom = new Bitmap(Assets.getBitmapData("img/Background/left_wall_scale.png"));
 		
 		addChild(bitmap3);
 		addChild(bitmap2);
 		addChild(bitmap);
 		addChild(bitmap5);
 		addChild(bitmap4);
-		
-		this.y = 0;
+		addChild(mountDoom);
+		mountDoom.y = stage.stageHeight - mountDoom.height;
 	}
 	
 	public function addObject(object:GrabbableObject) 

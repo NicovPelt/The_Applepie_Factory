@@ -31,6 +31,7 @@ class Gap extends Sprite
 	}
 	public function update() {
 		if (this.hitTestObject(rock)) {
+			if (!rock.grabbed) rock.x = this.x + this.width / 2;
 			isFilled = true;
 			rock.inGap = true;
 		}else {
