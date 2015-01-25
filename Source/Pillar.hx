@@ -12,7 +12,8 @@ import openfl.events.Event;
 class Pillar extends Sprite
 {
 	var rock:GrabbableObject;
-	var pillarGraphics:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Background/Wall/Wall1.png"));
+	var pillarGraphics:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Background/Wall/Fixed1.png"));
+	public var destroyed:Bool = false;
 
 	public function new(rock:GrabbableObject) 
 	{
@@ -36,7 +37,7 @@ class Pillar extends Sprite
 	
 	public function update() {
 		if (this.hitTestObject(rock)) {
-			//destroy!
+			
 		}
 	}
 	
