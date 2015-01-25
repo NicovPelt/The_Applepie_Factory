@@ -65,7 +65,7 @@ class Cutscene extends Sprite
 			Timer.delay(nextFrame, 500);
 		} else {
 			stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
-			Timer.delay(done, 500);
+			Timer.delay(done, 100);
 		}
 	}
 	function done() {
