@@ -423,12 +423,13 @@ class Vehicle extends Sprite
 	{
 		for (gap in terrain.gaps)
 		{
-			if (hitTestObject(gap) == false || gap.isFilled == true)
+			if ((!hitTestObject(gap) || gap.isFilled) && !hitTestObject(terrain.pillar))
 			{
 				terrain.speed = -speed;
 				animateTracks();
 			}
 			else terrain.speed = 0;
+			
 		}
 	}
 	function moveStop ()

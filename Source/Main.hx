@@ -3,6 +3,7 @@ package;
 
 import haxe.Timer;
 import menu.Button;
+import openfl.display.Bitmap;
 import openfl.display.Sprite;
 import menu.Menu;
 import openfl.events.KeyboardEvent;
@@ -10,6 +11,7 @@ import openfl.ui.Keyboard;
 import openfl.events.MouseEvent;
 import openfl.display.StageDisplayState;
 import openfl.Lib;
+import openfl.Assets;
 
 
 class Main extends Sprite {
@@ -20,6 +22,7 @@ class Main extends Sprite {
 	var startMenu:menu.Menu = new Menu(1);
 	var pauseMenu:Menu = new Menu(2);
 	var pauseButton:Button = new Button("img/MainMenu/pause.png", "img/MainMenu/pause.png");
+	var splashScreen:Bitmap = new Bitmap(Assets.getBitmapData("img/credits2015.png"));
 	
 	
 	
@@ -27,16 +30,21 @@ class Main extends Sprite {
 		super ();
 		game = new Game();
 		goFullScreen();
-		addChild(startMenu);
+		addChild(splashScreen);
 		addChild(music);
 		update();
 		music.playGameMusic(1.0);
-
+		Timer.delay(afterSplash, 2000);
+	}
+	
+	function afterSplash() {
+		removeChild(splashScreen);
+		addChild(startMenu);
 	}
 	
 	function update()
 	{	
-		goFullScreen();
+		//goFullScreen();
 		if (!started) {
 			if (startMenu.start) {
 				started = true;
