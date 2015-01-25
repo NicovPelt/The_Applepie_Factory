@@ -1,4 +1,5 @@
 package vehicle ;
+import haxe.Timer;
 import openfl.display.Sprite;
 import openfl.geom.Point;
 import openfl.display.BitmapData;
@@ -15,6 +16,9 @@ class ArmGrabber extends Sprite
 	var grabbed:GrabbableObject;
 	public var grabbableObjects:Array<GrabbableObject> = new Array<GrabbableObject>();
 	public var terrain:Terrain;
+	var bitmap2:Bitmap;
+	var bitmap3:Bitmap;
+	
 	
 	public function new() 
 	{
@@ -30,14 +34,14 @@ class ArmGrabber extends Sprite
 		bitmap.x = -bitmap.width/2;
 		addChild(bitmap);
 		var bitmapData2:BitmapData = Assets.getBitmapData("assets/img/Gripper2_2X.png");
-		var bitmap2 = new Bitmap(bitmapData2);
-		bitmap2.y = -50;
-		bitmap2.x = -12;
+		bitmap2 = new Bitmap(bitmapData2);
+		bitmap2.y = -82;
+		bitmap2.x = -25;
 		addChild(bitmap2);
 		var bitmapData3:BitmapData = Assets.getBitmapData("assets/img/Gripper3_2X.png");
-		var bitmap3 = new Bitmap(bitmapData3);
-		bitmap3.y = 50 - 15;
-		bitmap3.x = -12;
+		bitmap3 = new Bitmap(bitmapData3);
+		bitmap3.y = 50;
+		bitmap3.x = -25;
 		addChild(bitmap3);
 		rotation += 90;
 		
@@ -45,6 +49,9 @@ class ArmGrabber extends Sprite
 	
 	public function grabObject()
 	{
+		bitmap2.y = -62;
+		bitmap3.y = 30;
+		Timer.delay(resetClaw, 500);
 		for(object in grabbableObjects){
 			if (this.hitTestObject(object) && !grabbing)
 			{
@@ -61,6 +68,9 @@ class ArmGrabber extends Sprite
 	
 	public function dropObject()
 	{
+		bitmap2.rotation = -20;
+		bitmap3.rotation = 20;
+		Timer.delay(resetClaw, 500);
 		if(grabbing){
 			grabbing = false;
 			terrain.addObject(grabbed);
@@ -74,6 +84,14 @@ class ArmGrabber extends Sprite
 			//grabbed = null;
 			
 		}
+	}
+	
+	function resetClaw()
+	{
+		bitmap2.y = -82;
+		bitmap3.y = 50;
+		bitmap2.rotation = 0;
+		bitmap3.rotation = 0;
 	}
 	
 	public function update()
