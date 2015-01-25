@@ -36,7 +36,7 @@ class Main extends Sprite {
 	
 	function update()
 	{	
-		goFullScreen();
+		//goFullScreen();
 		if (!started) {
 			if (startMenu.start) {
 				started = true;
