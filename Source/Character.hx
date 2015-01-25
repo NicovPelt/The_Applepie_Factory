@@ -21,7 +21,7 @@ class Character extends Sprite
 	var character:Tilesheet;
 	var tileHeight:Int = 64;
 	var tileWidth:Int;
-	var tiles:Int = 24;
+	var tiles:Int = 6;
 	var	keys:Array<Bool> = new Array<Bool>();
 	var keyJump:Int;
 	var keyLeft:Int;
@@ -51,7 +51,7 @@ class Character extends Sprite
 			keyJump = Keyboard.W;
 			keyLeft = Keyboard.A;
 			keyRight = Keyboard.D;
-			tileWidth = 47;
+			tileWidth = 40;
 		}else if (charNo == 2) {
 			character = new Tilesheet(Assets.getBitmapData("img/character/dimwitTiles.png"));
 			keyJump = Keyboard.UP;
@@ -89,7 +89,10 @@ class Character extends Sprite
 			horizontalSpeed = -xSpeed;
 			animateLeft();
 			
-		}else {
+		}else if (jumped) {
+			animateJump();
+		}
+		else {
 			horizontalSpeed = 0;
 			drawCharacter();
 			frame = 0;
@@ -99,9 +102,7 @@ class Character extends Sprite
 			isGrounded = false;
 			jumped = true;
 		}
-		if (jumped) {
-			animateJump();
-		}
+		
 	}
 	
 	public function update() {
@@ -157,38 +158,54 @@ class Character extends Sprite
 			
 		}
 	}
+	var updatesPerFrame:Int = 5;
+	var currentUpdate:Int = 0;
 	function animateRight() {
-		this.graphics.clear();
-		if (frame % 4 != 1) { frame = 1; }
+		if (currentUpdate >= updatesPerFrame) {
+			this.graphics.clear();
+			if (frame % 4 != 1) { frame = 1; }
 			if (frame + 4 < tiles) {
 				frame += 4;
 			}else {
 				frame = 1;
 			}
 			character.drawTiles( this.graphics, [ 0, 0, frame], true );
-		
+			currentUpdate = 0;
+		}else {
+			currentUpdate++;
+		}
 	}
 	function animateLeft() {
-		this.graphics.clear();
-		if (frame % 4 != 2) { frame = 2; }
-		if (frame + 4 < tiles) {
+		if (currentUpdate >= updatesPerFrame) {
+			this.graphics.clear();
+			if (frame % 4 != 2) { frame = 2; }
+			if (frame + 4 < tiles) {
 				frame += 4;
 			}else {
 				frame = 2;
 			}
-		character.drawTiles( this.graphics, [ 0, 0, frame], true );
-		
-	}
-	function animateJump() {
-		this.graphics.clear();
-		if(!isGrounded){
-		if (frame % 4 != 3) { frame = 3; }
-		if (frame + 4 < tiles) {
-				frame += 4;
-			}else {
-				frame = 3;
-			}
 			character.drawTiles( this.graphics, [ 0, 0, frame], true );
+			currentUpdate = 0;
+		}else {
+			currentUpdate++;
+		}
+	}
+	
+	function animateJump() {
+		if(currentUpdate >= updatesPerFrame){
+		this.graphics.clear();
+			if(!isGrounded){
+			if (frame % 4 != 3) { frame = 3; }
+				if (frame + 4 < tiles) {
+					frame += 4;
+				}else {
+					frame = 3;
+				}
+				character.drawTiles( this.graphics, [ 0, 0, frame], true );
+			}
+			currentUpdate = 0;
+		}else {
+			currentUpdate++;
 		}
 	}
 }
