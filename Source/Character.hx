@@ -62,12 +62,14 @@ class Character extends Sprite
 		removeEventListener(Event.ADDED_TO_STAGE, init);
 		initTiles();
 		drawCharacter();
-		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
-		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+		addKeyListeners();
 		this.x = (stage.stageWidth - this.width) / 2;
 		this.y = (stage.stageHeight - this.height) /2;
 	}
-	
+	public function addKeyListeners() {
+		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+	}
 	
 	//Move Section	
 	function onKeyDown(e:KeyboardEvent):Void {

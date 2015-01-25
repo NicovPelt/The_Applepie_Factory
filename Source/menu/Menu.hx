@@ -12,13 +12,19 @@ import openfl.events.MouseEvent;
 class Menu extends Sprite
 {
 	public var start:Bool = false;
-	var startButton:Button = new Button("img/MainMenu/start.png", "img/MainMenu/start.png");
+	var startButton:Button;
 	var exitButton:Button = new Button("img/MainMenu/exit.png", "img/MainMenu/exit.png");
 	var background:Bitmap = new Bitmap(Assets.getBitmapData("img/MainMenu/bg.png"));
 	
-	public function new() 
+	public function new(menu:Int) 
 	{
+		
 		super();
+		if (menu == 1) {
+			startButton = new Button("img/MainMenu/start.png", "img/MainMenu/start.png");
+		}else if(menu == 2){
+			startButton = new Button("img/MainMenu/resume.png", "img/MainMenu/resume.png");
+		}
 		addEventListener(Event.ADDED_TO_STAGE, init);
 	}
 	

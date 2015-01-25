@@ -11,8 +11,8 @@ import openfl.events.Event;
  */
 class Game extends Sprite
 {
-	var character:Character;
-	var character2:Character;
+	public var character:Character;
+	public var character2:Character;
 	var vehicle:Vehicle;
 	var terrain:Terrain;
 	var rock:GrabbableObject = new GrabbableObject();
