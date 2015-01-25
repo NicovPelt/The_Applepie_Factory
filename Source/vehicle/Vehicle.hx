@@ -35,7 +35,7 @@ class Vehicle extends Sprite
 	var arm2 = new ArmSegment("assets/img/Arm2_2X.png");
 	public var armGrabber = new ArmGrabber();
 	var vehicleControl:VehicleControl;
-	var sortedX:Array<Int> = [40 ,-115,-123,-192,  80,300,120,-300];
+	var sortedX:Array<Int> = [-8 ,-175,-163,-137,  40,335,120,-292];
 	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
 	var lights:Array<Bitmap>;
 
@@ -50,12 +50,12 @@ class Vehicle extends Sprite
 		platforms = new Array<Sprite>();
 		vehicleControles = new Array<VehicleControl>();
 		
-		draw();
-		
 		var bitmap:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Body1.png"));
-		
 		bitmap.x -= bitmap.width / 2;
 		bitmap.y -= bitmap.height / 2 -50;
+		
+		
+		draw();
 		
 		//create lights
 		lights = new Array<Bitmap>();
