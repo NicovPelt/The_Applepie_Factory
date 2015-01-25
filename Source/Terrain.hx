@@ -44,6 +44,10 @@ class Terrain extends Sprite
 		bitmap5 = new Bitmap(bitmapData5);
 		mountDoom = new Bitmap(Assets.getBitmapData("img/Background/left_wall_scale.png"));
 		
+		var bitmap6 = new Bitmap(Assets.getBitmapData("assets/img/Background/Wall/Wall1.png"));
+		bitmap6.x = 5750;
+		bitmap6.y = 340;
+		
 		addChild(bitmap3);
 		addChild(bitmap2);
 		addChild(bitmap);
@@ -51,6 +55,8 @@ class Terrain extends Sprite
 		addChild(bitmap4);
 		addChild(mountDoom);
 		mountDoom.y = stage.stageHeight - mountDoom.height;
+		
+		addChild(bitmap6);
 	}
 	
 	public function addObject(object:GrabbableObject) 
