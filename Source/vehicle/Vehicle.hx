@@ -43,6 +43,8 @@ class Vehicle extends Sprite
 
 	var track1:Bitmap;
 	var track2:Bitmap;
+	var track1Alt:Bitmap;
+	var track2Alt:Bitmap;
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
@@ -123,6 +125,15 @@ class Vehicle extends Sprite
 		track2.scaleX = -1;
 		track2.x = bitmap.x + 1187;
 		track2.y = bitmap.y + 442;
+		
+		track1Alt = new Bitmap(Assets.getBitmapData("assets/img/Tracks1_Alt.png"));
+		track1Alt.x = bitmap.x + 8;
+		track1Alt.y = bitmap.y + 442;	
+		
+		track2Alt = new Bitmap(Assets.getBitmapData("assets/img/Tracks1_Alt.png"));
+		track2Alt.scaleX = -1;
+		track2Alt.x = bitmap.x + 1187;
+		track2Alt.y = bitmap.y + 442;
 		
 		for (lichtje in lights) {
 			addChild(lichtje);
@@ -400,6 +411,7 @@ class Vehicle extends Sprite
 			if (hitTestObject(gap) == false || gap.isFilled == true)
 			{
 				terrain.speed = speed;
+				animateTracks();
 			}
 			else terrain.speed = 0;
 		}
@@ -414,6 +426,7 @@ class Vehicle extends Sprite
 			if (hitTestObject(gap) == false || gap.isFilled == true)
 			{
 				terrain.speed = -speed;
+				animateTracks();
 			}
 			else terrain.speed = 0;
 		}
@@ -450,4 +463,28 @@ class Vehicle extends Sprite
 	{
 		armGrabber.dropObject();
 	}
+	var framePerSwithc:Int = 2;
+	var trackFrame:Int = 0;
+	function animateTracks() {
+		if (trackFrame > framePerSwithc) {
+			trackFrame = 0;
+			if (this.contains(track1)) {
+				removeChild(track1);
+				addChild(track1Alt);
+			}else if (this.contains(track1Alt)) {
+				removeChild(track1Alt);
+				addChild(track1);
+			}
+			if (this.contains(track2)) {
+				removeChild(track2);
+				addChild(track2Alt);
+			}else if (this.contains(track2Alt)) {
+				removeChild(track2Alt);
+				addChild(track2);
+			}
+		}else {
+			trackFrame++;
+		}
+	}
+	
 }
