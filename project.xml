@@ -7,6 +7,7 @@
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
+	<haxelib name="haxe-gif" />
 	
 	<window width="1920" height="1080" unless="mobile" />
 	<window fullscreen="true" resizable="false" />

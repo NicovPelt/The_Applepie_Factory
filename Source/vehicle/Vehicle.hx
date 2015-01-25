@@ -24,6 +24,9 @@ class Vehicle extends Sprite
 	var arm2 = new ArmSegment("assets/img/Arm2_2X.png");
 	public var armGrabber = new ArmGrabber();
 	var vehicleControl:VehicleControl;
+	var sortedX:Array<Int> = [40 ,-115,-123,-192,  80,300,120,-300];
+	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
+
 	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
@@ -33,6 +36,14 @@ class Vehicle extends Sprite
 		vehicleControles = new Array<VehicleControl>();
 		
 		draw();
+		
+		for (control in vehicleControles) {
+			var i:Int = Std.random(sortedX.length);
+			control.x = sortedX[i];
+			control.y = sortedY[i];
+			sortedX.splice(i,1);
+			sortedY.splice(i,1);
+		}
 		
 		for(platform in platforms){
 			addChild(platform);
@@ -154,7 +165,7 @@ class Vehicle extends Sprite
 		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
 		platform.graphics.drawRect( 0, 0, 190, 10);
-		platform.x = 200;
+		platform.x = 220;
 		platform.y = 50;
 		platforms.push(platform);
 		
@@ -168,7 +179,7 @@ class Vehicle extends Sprite
 		platform = new Sprite();
 		platform.graphics.beginFill(0x00ff00);
 		platform.graphics.drawRect( 0, 0, 128, 10);
-		platform.x = 70;
+		platform.x = 90;
 		platform.y = 136;
 		platforms.push(platform);
 		
