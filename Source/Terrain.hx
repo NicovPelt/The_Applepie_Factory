@@ -18,6 +18,8 @@ class Terrain extends Sprite
 	var bitmap3:Bitmap;
 	var bitmap4:Bitmap;
 	var bitmap5:Bitmap;
+	var bitmap6:Bitmap;
+	
 	public var mountDoom:Bitmap;
 	public var gaps:Array<Gap> = new Array<Gap>();
 	var particleSystem : ParticleSystem ;
@@ -41,11 +43,14 @@ class Terrain extends Sprite
 		bitmap5 = new Bitmap(bitmapData5);
 		mountDoom = new Bitmap(Assets.getBitmapData("img/Background/left_wall_scale.png"));
 		
+		var creditsMap:BitmapData = Assets.getBitmapData("assets/img/Background/level_3_ground.png");
+		bitmap6 = new Bitmap(creditsMap);
 		addChild(bitmap3);
 		addChild(bitmap2);
 		addChild(bitmap);
 		addChild(bitmap5);
 		addChild(bitmap4);
+		addChild(bitmap6);
 		addChild(mountDoom);
 		this.y = 0;
 	}
@@ -58,7 +63,7 @@ class Terrain extends Sprite
 		particleSystem.y = 0 ;
 		particleSystem.particleSpawn_x = 440 ;
 		particleSystem.particleSpawn_y = 640 ;
-		
+		//bitmap6.x = bitmap4.width;
 	}
 	
 	public function addObject(object:GrabbableObject) 

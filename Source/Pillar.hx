@@ -5,13 +5,19 @@ import openfl.display.Sprite;
 import openfl.Assets;
 import openfl.events.Event;
 import haxe.Timer;
-
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
+import openfl.Assets.loadSound;
 /**
  * ...
  * @author ...
  */
 class Pillar extends Sprite
 {
+	var soundVolume: Float = 4;
+	var soundChannel:SoundChannel;
+	var bangSound = Assets.getSound("audio/GGJ_bang.wav");
+	
 	var rock:GrabbableObject;
 	var pillarGraphics:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Background/Wall/Fixed1.png"));
 	public var destroyed:Bool = false;
@@ -46,6 +52,7 @@ class Pillar extends Sprite
 	
 	function crumble() {
 		if (frame < 6) {
+			soundChannel = bangSound.play(0, 0, new SoundTransform(soundVolume));
 			removeChild(pillarGraphics);
 			pillarGraphics = new Bitmap(Assets.getBitmapData("assets/img/Background/Wall/Fixed" + frame+".png"));
 			addChild(pillarGraphics);

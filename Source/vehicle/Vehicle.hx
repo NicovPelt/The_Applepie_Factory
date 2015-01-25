@@ -409,7 +409,7 @@ class Vehicle extends Sprite
 	{
 		for (gap in terrain.gaps)
 		{
-			if (bitmap.hitTestObject(gap) == false || gap.isFilled == true)
+			if (!bitmap.hitTestObject(gap) || gap.isFilled == true)
 			{
 				terrain.speed = speed;
 				animateTracks();
@@ -424,7 +424,7 @@ class Vehicle extends Sprite
 	{
 		for (gap in terrain.gaps)
 		{
-			if ((!hitTestObject(gap) || gap.isFilled) && (!hitTestObject(terrain.pillar) || terrain.pillar.destroyed))
+			if ((!bitmap.hitTestObject(gap) || gap.isFilled) && (!hitTestObject(terrain.pillar) || terrain.pillar.destroyed))
 			{
 				terrain.speed = -speed;
 				animateTracks();

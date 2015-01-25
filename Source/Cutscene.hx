@@ -29,7 +29,7 @@ class Cutscene extends Sprite
 	var alarm2Sound = Assets.getSound("audio/GGJ_alarm_2.wav");
 	
 	
-	var soundVolume: Float = 4;
+	var soundVolume: Float = 3;
 	var soundChannel:SoundChannel;
 	
 	public var frameNr:Int = 0;
