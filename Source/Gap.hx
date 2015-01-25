@@ -21,7 +21,6 @@ class Gap extends Sprite
 	}
 	
 	function drawGap() {
-
 		this.graphics.beginFill(0xff0000);
 		this.graphics.drawRect( 0, 0, 140, 150);
 		this.graphics.endFill();

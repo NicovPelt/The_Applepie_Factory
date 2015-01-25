@@ -22,7 +22,7 @@ class Terrain extends Sprite
 	public var gaps:Array<Gap> = new Array<Gap>();
 	var particleSystem : ParticleSystem ;
 	
-	
+	public var pillar:Pillar;	
 	
 	public function new() 
 	{

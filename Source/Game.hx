@@ -53,6 +53,10 @@ class Game extends Sprite
 		var gap:Gap = new Gap(rock);
 		terrain.addChild(gap);
 		terrain.gaps.push(gap);
+		var pillar:Pillar = new Pillar(rock);
+		terrain.pillar = pillar;
+		terrain.addChild(pillar);
+		
 	}
 	
 	public function update()

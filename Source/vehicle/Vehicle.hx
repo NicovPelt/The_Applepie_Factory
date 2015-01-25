@@ -412,11 +412,12 @@ class Vehicle extends Sprite
 	{
 		for (gap in terrain.gaps)
 		{
-			if (bitmap.hitTestObject(gap) == false || gap.isFilled == true)
+			if ((!hitTestObject(gap) || gap.isFilled) && !hitTestObject(terrain.pillar))
 			{
 				terrain.speed = -speed;
 			}
 			else terrain.speed = 0;
+			
 		}
 	}
 	function moveStop ()
