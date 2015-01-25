@@ -20,6 +20,7 @@ class Terrain extends Sprite
 	var bitmap5:Bitmap;
 	public var mountDoom:Bitmap;
 	public var gaps:Array<Gap> = new Array<Gap>();
+	var particleSystem : ParticleSystem ;
 	
 	
 	
@@ -50,6 +51,14 @@ class Terrain extends Sprite
 	}
 	function init(e:Event) {
 		mountDoom.y = stage.stageHeight - mountDoom.height;
+		
+		particleSystem = new ParticleSystem ("smoke");
+		addChild (particleSystem);
+		particleSystem.x = 0 ;
+		particleSystem.y = 0 ;
+		particleSystem.particleSpawn_x = 440 ;
+		particleSystem.particleSpawn_y = 640 ;
+		
 	}
 	
 	public function addObject(object:GrabbableObject) 
@@ -65,8 +74,11 @@ class Terrain extends Sprite
 		this.x += speed;
 		//bitmap4.x += speed * 1;
 		//bitmap5.x += speed * 1;
+		
 		for (gap in gaps) {
 			gap.update();
 		}
+		particleSystem.particleSpawn_x -= speed ;
+		particleSystem.update();
 	}
 }
