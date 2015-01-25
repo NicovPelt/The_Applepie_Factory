@@ -28,10 +28,6 @@ class Terrain extends Sprite
 		super();
 		addEventListener(Event.ADDED_TO_STAGE, init);
 
-		
-		this.y = 0;
-	}
-	function init(e:Event) {
 		var bitmapData:BitmapData = Assets.getBitmapData("assets/img/Background/Level_1_background_1.png");
 		bitmap = new Bitmap(bitmapData);
 		var bitmapData2:BitmapData = Assets.getBitmapData("assets/img/Background/Level_1_background_2.png");
@@ -50,6 +46,9 @@ class Terrain extends Sprite
 		addChild(bitmap5);
 		addChild(bitmap4);
 		addChild(mountDoom);
+		this.y = 0;
+	}
+	function init(e:Event) {
 		mountDoom.y = stage.stageHeight - mountDoom.height;
 	}
 	
