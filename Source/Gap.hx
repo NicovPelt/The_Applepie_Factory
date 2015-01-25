@@ -27,7 +27,7 @@ class Gap extends Sprite
 		this.graphics.endFill();
 		this.x = 2360;
 		this.y = stage.stageHeight - this.height /2;
-		this.alpha =1;
+		this.alpha =0;
 	}
 	public function update() {
 		if (this.hitTestObject(rock)) {
