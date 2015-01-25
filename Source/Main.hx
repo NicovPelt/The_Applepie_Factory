@@ -34,26 +34,20 @@ class Main extends Sprite {
 	
 	function update()
 	{	
+		goFullScreen();
 		if (!started) {
-			if (startMenu.start == true) {
+			if (startMenu.start) {
+				started = true;
 				startMenu.start = false;
 				removeChild(startMenu);
-				addChild(game);
-				started = true;
-				pauseButton.x = 15;
-				pauseButton.y = 15;
-				addChild(pauseButton);
-				stage.addEventListener(KeyboardEvent.KEY_DOWN, pauseKey);
-				pauseButton.addEventListener(MouseEvent.CLICK, pauseClick);
-				goFullScreen();
-			}else if (pauseMenu.start == true) {
+				addChild(new Cutscene(this));
+			}else if (pauseMenu.start) {
 				pauseMenu.start = false;
 				started = true;
 				addChild(game);
 				addChild(pauseButton);
 				stage.addEventListener(KeyboardEvent.KEY_DOWN, pauseKey);
 				pauseButton.addEventListener(MouseEvent.CLICK, pauseClick);
-				goFullScreen();
 			}
 		}else{
 			game.update();
@@ -72,15 +66,27 @@ class Main extends Sprite {
 		pause();
 	}
 	function pause() {
+		goFullScreen();
 		started = false;
 		addChild(pauseMenu);
 		removeChild(game);
 		removeChild(pauseButton);
-		goFullScreen();
+		
 	}
 	function goFullScreen() {
 		if(Lib.current.stage.displayState != StageDisplayState.FULL_SCREEN_INTERACTIVE){
 			Lib.current.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
 		}
+	}
+	
+	public function startGame() {
+		removeChildren();
+		addChild(game);
+		started = true;
+		pauseButton.x = 15;
+		pauseButton.y = 15;
+		addChild(pauseButton);
+		stage.addEventListener(KeyboardEvent.KEY_DOWN, pauseKey);
+		pauseButton.addEventListener(MouseEvent.CLICK, pauseClick);
 	}
 }
