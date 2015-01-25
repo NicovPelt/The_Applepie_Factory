@@ -5,6 +5,7 @@ import openfl.Assets;
 import haxe.Timer;
 import openfl.display.Bitmap;
 import openfl.events.Event;
+import openfl.media.Sound;
 import flash.media.SoundChannel;
 import flash.media.SoundTransform;
 import openfl.Assets.loadSound;

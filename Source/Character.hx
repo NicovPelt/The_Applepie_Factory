@@ -35,13 +35,14 @@ class Character extends Sprite
 	var verticleSpeed:Int = 0;
 	var horizontalSpeed:Int = 0;
 	var jumped:Bool = false;
+	var char:Int;
 	
 	public var onButton:Bool = false;
 	
 	public function new(charNo:Int, vehicle:Vehicle) 
 	{
 		super();
-		
+		char = charNo;
 		this.vehicle = vehicle;
 		
 		addEventListener(Event.ADDED_TO_STAGE, init);
@@ -65,7 +66,7 @@ class Character extends Sprite
 		initTiles();
 		drawCharacter();
 		addKeyListeners();
-		this.x = (stage.stageWidth - this.width) / 2;
+		this.x = (stage.stageWidth - this.width) / 2 + 275 + (char-1) *64;
 		this.y = (stage.stageHeight - this.height) /2;
 	}
 	public function addKeyListeners() {

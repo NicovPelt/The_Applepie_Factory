@@ -6,6 +6,8 @@ import openfl.events.Event;
 import openfl.events.KeyboardEvent;
 import openfl.ui.Keyboard;
 import openfl.Assets;
+import openfl.media.Sound;
+import haxe.Timer;
 import flash.media.SoundChannel;
 import flash.media.SoundTransform;
 import openfl.Assets.loadSound;
@@ -39,7 +41,6 @@ class Vehicle extends Sprite
 	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
 	var lights:Array<Bitmap>;
 
-	
 	var track1:Bitmap;
 	var track2:Bitmap;
 	
@@ -387,7 +388,6 @@ class Vehicle extends Sprite
 			moveStop();
 		}
 	}
-	
 	function moveLeft()
 	{
 		for (gap in terrain.gaps)
@@ -397,6 +397,9 @@ class Vehicle extends Sprite
 				terrain.speed = speed;
 			}
 			else terrain.speed = 0;
+		}
+		if (hitTestObject(terrain.mountDoom)) {
+			terrain.speed = 0;
 		}
 	}
 	function moveRight()
