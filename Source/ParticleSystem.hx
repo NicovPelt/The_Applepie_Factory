@@ -22,9 +22,9 @@ class ParticleSystem extends Sprite
 	public var particleSpawn_x : Float ;
 	public var particleSpawn_y : Float ;
 	
-	//var wind : Float = -0.03 ;
+	var wind : Float = -0.03 ;
 	
-	var wind : Float = Math.random() * -0.14 + 0.07 ;
+	//var wind : Float = Math.random() * -0.14 + 0.07 ;
 	
 	var framesPerPart:Int = 4;
 	var frame:Int = 0;
@@ -40,14 +40,14 @@ class ParticleSystem extends Sprite
 		newParticle.x = particleSpawn_x + Math.random () * 4 - 2;
 		newParticle.y = particleSpawn_y + Math.random () * 4 - 2;
 		newParticle.acc_x = wind;
-		newParticle.acc_y = -0.04;
+		newParticle.acc_y = 0.03;
 		newParticle.vel_x = Math.random() * 1 -.5;
-		newParticle.vel_y = Math.random() * -2;
+		newParticle.vel_y = Math.random() * -1 -4;
 		newParticle.scaleX = 1 ;
 		newParticle.scaleY = 1 ;
-		newParticle.scale_inc = Math.random () * 0.003 + 0.01 ;
+		newParticle.scale_inc = Math.random () * 0.013 + 0.02 ;
 		newParticle.alpha = 0.5 ;
-		newParticle.fadetime = -0.00455;
+		newParticle.fadetime = -0.00355;
 		newParticle.rotation = Math.random () * 360;
 		
 		

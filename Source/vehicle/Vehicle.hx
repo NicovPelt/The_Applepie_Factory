@@ -424,7 +424,7 @@ class Vehicle extends Sprite
 	{
 		for (gap in terrain.gaps)
 		{
-			if ((!hitTestObject(gap) || gap.isFilled) && !hitTestObject(terrain.pillar))
+			if ((!hitTestObject(gap) || gap.isFilled) && (!hitTestObject(terrain.pillar) || terrain.pillar.destroyed))
 			{
 				terrain.speed = -speed;
 				animateTracks();
