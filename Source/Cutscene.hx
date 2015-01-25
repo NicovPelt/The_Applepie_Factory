@@ -64,6 +64,7 @@ class Cutscene extends Sprite
 		if(frameNr<21 && !skip){
 			Timer.delay(nextFrame, 500);
 		} else {
+			stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 			Timer.delay(done, 500);
 		}
 	}

@@ -51,7 +51,7 @@ class Game extends Sprite
 		vehicle.armGrabber.grabbableObjects.push(rock);
 		vehicle.armGrabber.grabbableObjects.push(rock2);
 		vehicle.armGrabber.terrain = terrain;
-		rock.x = 1000;
+		rock.x = 1800;
 		rock.y = 500;
 		rock2.x = 3000;
 		rock2.y = 500;
