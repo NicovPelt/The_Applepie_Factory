@@ -64,6 +64,7 @@ class GrabbableObject extends Sprite
 		{
 			yVelocity = 0;
 			onGround = false;
+			inGap = false;
 		}
 		if (inGap) {
 			minGroundLevel = Math.round(stage.stageHeight - this.height /2);

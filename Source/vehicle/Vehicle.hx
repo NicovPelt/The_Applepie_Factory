@@ -24,7 +24,7 @@ class Vehicle extends Sprite
 	var switchSound = Assets.getSound("audio/GGJ_switch_1.wav");
 	var toneSound = Assets.getSound("audio/GGJ_tone.wav");
 	
-	var soundVolume: Float = 1;
+	var soundVolume: Float = 2;
 	var soundChannel:SoundChannel;
 	
 	public var vehicleControles:Array<VehicleControl>;
@@ -138,8 +138,8 @@ class Vehicle extends Sprite
 		arm2.x = arm.width - 110;
 		arm2.y = 0;
 		armGrabber.x = arm2.width - 125;
-		arm.x = 0;
-		arm.y = -50;
+		arm.x = 242;
+		arm.y = -245;
 		addEventListener(Event.ADDED_TO_STAGE, init);
 	}
 	
@@ -335,11 +335,14 @@ class Vehicle extends Sprite
 		for (light in lights) {
 			light.alpha = 0;
 		}
-		for (vehicleControl in vehicleControles) {
-			for(character in characters){
+		for (character in characters) {
+			var hitButton = false;
+			for(vehicleControl in vehicleControles){
+			
 				if (character.hitTestObject(vehicleControl)) 
 				{
 					if (character.onButton == false)soundChannel = switchSound.play(0, 0, new SoundTransform(soundVolume));
+					hitButton = true;
 					character.onButton = true;
 					switch (vehicleControl.controlType) 
 					{
@@ -379,7 +382,9 @@ class Vehicle extends Sprite
 							break ;
 					}
 				}
-				else
+			}
+			if (!hitButton)
+			{
 				character.onButton = false;
 			}
 		}

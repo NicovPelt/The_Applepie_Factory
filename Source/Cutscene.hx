@@ -24,6 +24,9 @@ class Cutscene extends Sprite
 	var rockSound = Assets.getSound("audio/GGJ_rock.wav");
 	var switchSound = Assets.getSound("audio/GGJ_switch_1.wav");
 	var toneSound = Assets.getSound("audio/GGJ_tone.wav");
+	var huhSound = Assets.getSound("audio/GGJ_huh.wav");
+	var alarmSound = Assets.getSound("audio/GGJ_alarm.wav");
+	var alarm2Sound = Assets.getSound("audio/GGJ_alarm_2.wav");
 	
 	
 	var soundVolume: Float = 4;
@@ -46,8 +49,13 @@ class Cutscene extends Sprite
 	
 	function nextFrame() {
 		removeChildren();
-		if (frameNr == 4 || frameNr == 7) soundChannel = toneSound.play(0, 0, new SoundTransform(soundVolume));
+		if (frameNr == 1) soundChannel = alarm2Sound.play(0, 15, new SoundTransform(soundVolume));
+		if (frameNr == 4) soundChannel = alarmSound.play(0, 4, new SoundTransform(soundVolume));
 		if (frameNr == 10) soundChannel = bangSound.play(0, 0, new SoundTransform(soundVolume));
+		if (frameNr == 13) soundChannel = huhSound.play(0, 1, new SoundTransform(soundVolume));
+		if (frameNr == 15) soundChannel = huhSound.play(0, 1, new SoundTransform(soundVolume));
+		if (frameNr == 19) soundChannel = huhSound.play(0, 1, new SoundTransform(soundVolume));
+		
 		var frame:Bitmap = new Bitmap(Assets.getBitmapData("img/cutscene/cutscene" + frameNr + ".png"));
 		frame.width = stage.stageWidth;
 		frame.height = stage.stageHeight;
