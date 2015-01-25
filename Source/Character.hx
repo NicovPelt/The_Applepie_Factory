@@ -36,6 +36,8 @@ class Character extends Sprite
 	var horizontalSpeed:Int = 0;
 	var jumped:Bool = false;
 	
+	public var onButton:Bool = false;
+	
 	public function new(charNo:Int, vehicle:Vehicle) 
 	{
 		super();

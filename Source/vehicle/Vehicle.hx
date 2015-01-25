@@ -6,13 +6,24 @@ import openfl.events.Event;
 import openfl.events.KeyboardEvent;
 import openfl.ui.Keyboard;
 import openfl.Assets;
-
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
+import openfl.Assets.loadSound;
 /**
  * ...
  * @author ...
  */
 class Vehicle extends Sprite
 {
+	//sound
+	var bangSound = Assets.getSound("audio/GGJ_bang.wav");
+	var errorSound = Assets.getSound("audio/GGJ_error.wav");
+	var rockSound = Assets.getSound("audio/GGJ_rock.wav");
+	var switchSound = Assets.getSound("audio/GGJ_switch_1.wav");
+	var toneSound = Assets.getSound("audio/GGJ_tone.wav");
+	
+	var soundVolume: Float = 1;
+	var soundChannel:SoundChannel;
 	
 	public var vehicleControles:Array<VehicleControl>;
 	public var platforms:Array<Sprite>;
@@ -277,36 +288,40 @@ class Vehicle extends Sprite
 			for(character in characters){
 				if (character.hitTestObject(vehicleControl)) 
 				{
+					if (character.onButton == false)soundChannel = switchSound.play(0, 0, new SoundTransform(soundVolume));
+					character.onButton = true;
 					switch (vehicleControl.controlType) 
 					{
 						case "move_right" :
 							moveRight();
 							moving = true;
-							break ;
+							//break ;
 						case "move_left" :
 							moveLeft();
 							moving = true;
-							break ;
+							//break ;
 						case "move_arm_1L" :
 							moveArm1L();
-							break ;
+							//break ;
 						case "move_arm_1R" :
 							moveArm1R();
-							break ;
+							//break ;
 						case "move_arm_2L" :
 							moveArm2L();
-							break ;
+							//break ;
 						case "move_arm_2R" :
 							moveArm2R();
-							break ;
+							//break ;
 						case "grab" :
 							grab();
-							break ;
+							//break ;
 						case "release" :
 							release();
-							break ;
+							//break ;
 					}
-				}	
+				}
+				else
+				character.onButton = false;
 			}
 		}
 		if(!moving)
