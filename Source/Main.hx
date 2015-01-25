@@ -21,6 +21,8 @@ class Main extends Sprite {
 	var pauseMenu:Menu = new Menu(2);
 	var pauseButton:Button = new Button("img/MainMenu/pause.png", "img/MainMenu/pause.png");
 	
+	
+	
 	public function new () {
 		super ();
 		game = new Game();

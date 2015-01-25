@@ -8,13 +8,24 @@ import openfl.ui.Keyboard;
 import openfl.Assets;
 import openfl.media.Sound;
 import haxe.Timer;
-
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
+import openfl.Assets.loadSound;
 /**
  * ...
  * @author ...
  */
 class Vehicle extends Sprite
 {
+	//sound
+	var bangSound = Assets.getSound("audio/GGJ_bang.wav");
+	var errorSound = Assets.getSound("audio/GGJ_error.wav");
+	var rockSound = Assets.getSound("audio/GGJ_rock.wav");
+	var switchSound = Assets.getSound("audio/GGJ_switch_1.wav");
+	var toneSound = Assets.getSound("audio/GGJ_tone.wav");
+	
+	var soundVolume: Float = 1;
+	var soundChannel:SoundChannel;
 	
 	public var vehicleControles:Array<VehicleControl>;
 	public var platforms:Array<Sprite>;
@@ -30,7 +41,6 @@ class Vehicle extends Sprite
 	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
 	var lights:Array<Bitmap>;
 
-	var mountdoom:Sound = Assets.getSound("assets/audio/shallnotpass.wav");
 	var track1:Bitmap;
 	var track2:Bitmap;
 	
@@ -329,6 +339,8 @@ class Vehicle extends Sprite
 			for(character in characters){
 				if (character.hitTestObject(vehicleControl)) 
 				{
+					if (character.onButton == false)soundChannel = switchSound.play(0, 0, new SoundTransform(soundVolume));
+					character.onButton = true;
 					switch (vehicleControl.controlType) 
 					{
 						case "move_right" :
@@ -366,7 +378,9 @@ class Vehicle extends Sprite
 							lights[7].alpha = 1;
 							break ;
 					}
-				}	
+				}
+				else
+				character.onButton = false;
 			}
 		}
 		if(!moving)
@@ -374,7 +388,6 @@ class Vehicle extends Sprite
 			moveStop();
 		}
 	}
-	var playinGandalf:Bool = false;
 	function moveLeft()
 	{
 		for (gap in terrain.gaps)
@@ -387,15 +400,10 @@ class Vehicle extends Sprite
 		}
 		if (hitTestObject(terrain.mountDoom)) {
 			terrain.speed = 0;
-			if(!playinGandalf){
-				mountdoom.play();
-				playinGandalf = true;
-			}
 		}
 	}
 	function moveRight()
 	{
-		playinGandalf = false;
 		for (gap in terrain.gaps)
 		{
 			if (hitTestObject(gap) == false || gap.isFilled == true)
