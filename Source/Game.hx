@@ -48,7 +48,7 @@ class Game extends Sprite
 		terrain.addChild(rock);
 		vehicle.armGrabber.grabbableObjects.push(rock);
 		vehicle.armGrabber.terrain = terrain;
-		rock.x = 1000;
+		rock.x = 1800;
 		rock.y = 500;
 		var gap:Gap = new Gap(rock);
 		terrain.addChild(gap);
