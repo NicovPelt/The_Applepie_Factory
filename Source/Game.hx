@@ -32,7 +32,7 @@ class Game extends Sprite
 		terrain = new Terrain();
 		addChild(terrain);
 		terrain.scaleX = terrain.scaleY = 1;
-		vehicle = new Vehicle(Std.int(stage.stageWidth/2), 700, terrain);
+		vehicle = new Vehicle(Std.int(stage.stageWidth/2), 720, terrain);
 		addChild(vehicle);
 		character = new Character(1, vehicle);
 		var characters = new Array<Character>();

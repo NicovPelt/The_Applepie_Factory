@@ -28,6 +28,9 @@ class Vehicle extends Sprite
 	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
 
 	
+	var track1:Bitmap;
+	var track2:Bitmap;
+	
 	public function new(xPos:Int, yPos:Int, terrainRef:Terrain ) 
 	{
 		super();
@@ -50,10 +53,21 @@ class Vehicle extends Sprite
 			platform.alpha = 0;
 		}
 		
-		var bitmap:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/TempBody.png"));
+		var bitmap:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Body1.png"));
 		addChild(bitmap);
 		bitmap.x -= bitmap.width / 2;
 		bitmap.y -= bitmap.height / 2 -50;
+		
+		track1 = new Bitmap(Assets.getBitmapData("assets/img/Tracks1.png"));
+		addChild(track1);
+		track1.x = bitmap.x + 8;
+		track1.y = bitmap.y + 442;	
+		
+		track2 = new Bitmap(Assets.getBitmapData("assets/img/Tracks1.png"));
+		addChild(track2);
+		track2.scaleX = -1;
+		track2.x = bitmap.x + 1187;
+		track2.y = bitmap.y + 442;	
 		
 		this.x = xPos;
 		this.y = yPos;
