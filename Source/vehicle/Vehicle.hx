@@ -26,6 +26,7 @@ class Vehicle extends Sprite
 	var vehicleControl:VehicleControl;
 	var sortedX:Array<Int> = [40 ,-115,-123,-192,  80,300,120,-300];
 	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
+	var lights:Array<Bitmap>;
 
 	
 	var track1:Bitmap;
@@ -40,23 +41,65 @@ class Vehicle extends Sprite
 		
 		draw();
 		
+		var bitmap:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Body1.png"));
+		
+		bitmap.x -= bitmap.width / 2;
+		bitmap.y -= bitmap.height / 2 -50;
+		
+		//create lights
+		lights = new Array<Bitmap>();
+		var light:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+688;
+		light.y = -(bitmap.height / 2 -50) + 474;
+		light.rotation += 90;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+482;
+		light.y = -(bitmap.height / 2 -50) + 410;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+500;
+		light.y = -(bitmap.height / 2 -50) + 254;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+450;
+		light.y = -(bitmap.height / 2 -50) + 105;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+654;
+		light.y = -(bitmap.height / 2 -50) + 105;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+996;
+		light.y = -(bitmap.height / 2 -50) + 282;
+		light.rotation += 90;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+672;
+		light.y = -(bitmap.height / 2 -50) + 254;
+		lights.push(light);
+		light = new Bitmap(Assets.getBitmapData("assets/img/Decor4_Alt.png"));
+		light.x = -(bitmap.width / 2)+232;
+		light.y = -(bitmap.height / 2 -50) + 244;
+		lights.push(light);
+		
+		var temp:Array<Bitmap> = new Array<Bitmap>();
 		for (control in vehicleControles) {
 			var i:Int = Std.random(sortedX.length);
 			control.x = sortedX[i];
 			control.y = sortedY[i];
 			sortedX.splice(i,1);
-			sortedY.splice(i,1);
+			sortedY.splice(i, 1);
+			temp.push(lights.splice(i, 1)[0]);
 		}
+		lights = temp;
 		
 		for(platform in platforms){
 			addChild(platform);
 			platform.alpha = 0;
 		}
 		
-		var bitmap:Bitmap = new Bitmap(Assets.getBitmapData("assets/img/Body1.png"));
 		addChild(bitmap);
-		bitmap.x -= bitmap.width / 2;
-		bitmap.y -= bitmap.height / 2 -50;
 		
 		track1 = new Bitmap(Assets.getBitmapData("assets/img/Tracks1.png"));
 		addChild(track1);
@@ -67,7 +110,11 @@ class Vehicle extends Sprite
 		addChild(track2);
 		track2.scaleX = -1;
 		track2.x = bitmap.x + 1187;
-		track2.y = bitmap.y + 442;	
+		track2.y = bitmap.y + 442;
+		
+		for (lichtje in lights) {
+			addChild(lichtje);
+		}
 		
 		this.x = xPos;
 		this.y = yPos;
@@ -273,6 +320,9 @@ class Vehicle extends Sprite
 		//armGrabber.rotation += 5;
 		
 		var moving = false;
+		for (light in lights) {
+			light.alpha = 0;
+		}
 		for (vehicleControl in vehicleControles) {
 			for(character in characters){
 				if (character.hitTestObject(vehicleControl)) 
@@ -282,28 +332,36 @@ class Vehicle extends Sprite
 						case "move_right" :
 							moveRight();
 							moving = true;
+							lights[0].alpha = 1;
 							break ;
 						case "move_left" :
 							moveLeft();
 							moving = true;
+							lights[1].alpha = 1;
 							break ;
 						case "move_arm_1L" :
 							moveArm1L();
+							lights[2].alpha = 1;
 							break ;
 						case "move_arm_1R" :
 							moveArm1R();
+							lights[3].alpha = 1;
 							break ;
 						case "move_arm_2L" :
 							moveArm2L();
+							lights[4].alpha = 1;
 							break ;
 						case "move_arm_2R" :
 							moveArm2R();
+							lights[5].alpha = 1;
 							break ;
 						case "grab" :
 							grab();
+							lights[6].alpha = 1;
 							break ;
 						case "release" :
 							release();
+							lights[7].alpha = 1;
 							break ;
 					}
 				}	
