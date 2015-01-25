@@ -325,6 +325,9 @@ class Vehicle extends Sprite
 			}
 			else terrain.speed = 0;
 		}
+		if (hitTestObject(terrain.mountDoom)) {
+			terrain.speed = 0;
+		}
 	}
 	function moveRight()
 	{
