@@ -24,9 +24,9 @@ class Cutscene extends Sprite
 	
 	function nextFrame() {
 		removeChildren();
-		addChild(new Bitmap(Assets.getBitmapData("img/cutscene/frame" + frameNr + ".png")));
+		addChild(new Bitmap(Assets.getBitmapData("img/cutscene/cutscene" + frameNr + ".png")));
 		frameNr++;
-		if(frameNr<20){
+		if(frameNr<21){
 			Timer.delay(nextFrame, 500);
 		} else {
 			Timer.delay(done, 500);
