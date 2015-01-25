@@ -1,5 +1,6 @@
 package ;
 import openfl.display.Sprite;
+import openfl.media.Sound;
 import vehicle.ArmSegment;
 import vehicle.Vehicle;
 import openfl.Assets;

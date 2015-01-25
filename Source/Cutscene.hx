@@ -5,6 +5,7 @@ import openfl.Assets;
 import haxe.Timer;
 import openfl.display.Bitmap;
 import openfl.events.Event;
+import openfl.media.Sound;
 
 /**
  * ...
@@ -15,6 +16,7 @@ class Cutscene extends Sprite
 
 	public var frameNr:Int = 0;
 	var main:Main;
+	var task:Sound = Assets.getSound("assets/audio/cutscene.wav");
 	
 	public function new(main:Main) 
 	{
@@ -24,6 +26,7 @@ class Cutscene extends Sprite
 	}
 	function init(e:Event) {
 		nextFrame();
+		task.play();
 	}
 	
 	function nextFrame() {

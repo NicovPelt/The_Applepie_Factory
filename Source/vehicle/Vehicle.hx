@@ -6,6 +6,8 @@ import openfl.events.Event;
 import openfl.events.KeyboardEvent;
 import openfl.ui.Keyboard;
 import openfl.Assets;
+import openfl.media.Sound;
+import haxe.Timer;
 
 /**
  * ...
@@ -28,7 +30,7 @@ class Vehicle extends Sprite
 	var sortedY:Array<Int> = [195, 160,  35, -150, -130, 40, 130,   0];
 	var lights:Array<Bitmap>;
 
-	
+	var mountdoom:Sound = Assets.getSound("assets/audio/shallnotpass.wav");
 	var track1:Bitmap;
 	var track2:Bitmap;
 	
@@ -372,7 +374,7 @@ class Vehicle extends Sprite
 			moveStop();
 		}
 	}
-	
+	var playinGandalf:Bool = false;
 	function moveLeft()
 	{
 		for (gap in terrain.gaps)
@@ -385,10 +387,15 @@ class Vehicle extends Sprite
 		}
 		if (hitTestObject(terrain.mountDoom)) {
 			terrain.speed = 0;
+			if(!playinGandalf){
+				mountdoom.play();
+				playinGandalf = true;
+			}
 		}
 	}
 	function moveRight()
 	{
+		playinGandalf = false;
 		for (gap in terrain.gaps)
 		{
 			if (hitTestObject(gap) == false || gap.isFilled == true)
