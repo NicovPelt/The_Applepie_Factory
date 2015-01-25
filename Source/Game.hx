@@ -19,7 +19,6 @@ class Game extends Sprite
 	var rock:GrabbableObject = new GrabbableObject();
 	var inited:Bool;
 	
-	
 	public function new() 
 	{
 		super();
