@@ -23,7 +23,7 @@ class Gap extends Sprite
 	function drawGap() {
 
 		this.graphics.beginFill(0xff0000);
-		this.graphics.drawRect( 0, 0, 140, 100);
+		this.graphics.drawRect( 0, 0, 140, 150);
 		this.graphics.endFill();
 		this.x = 2360;
 		this.y = stage.stageHeight - this.height /2;
