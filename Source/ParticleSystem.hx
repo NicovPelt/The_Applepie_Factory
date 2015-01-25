@@ -26,7 +26,7 @@ class ParticleSystem extends Sprite
 	
 	var wind : Float = Math.random() * -0.14 + 0.07 ;
 	
-	var framesPerPart:Int = 10;
+	var framesPerPart:Int = 4;
 	var frame:Int = 0;
 	
 	public function new(input:String) 
