@@ -17,6 +17,7 @@ class Game extends Sprite
 	var vehicle:Vehicle;
 	var terrain:Terrain;
 	var rock:GrabbableObject = new GrabbableObject();
+	var rock2:GrabbableObject = new GrabbableObject();
 	var inited:Bool;
 	
 	public function new() 
@@ -46,14 +47,18 @@ class Game extends Sprite
 		inited = true;
 		
 		terrain.addChild(rock);
+		terrain.addChild(rock2);
 		vehicle.armGrabber.grabbableObjects.push(rock);
+		vehicle.armGrabber.grabbableObjects.push(rock2);
 		vehicle.armGrabber.terrain = terrain;
 		rock.x = 1000;
 		rock.y = 500;
+		rock2.x = 3000;
+		rock2.y = 500;
 		var gap:Gap = new Gap(rock);
 		terrain.addChild(gap);
 		terrain.gaps.push(gap);
-		var pillar:Pillar = new Pillar(rock);
+		var pillar:Pillar = new Pillar(rock2);
 		terrain.pillar = pillar;
 		terrain.addChild(pillar);
 		
@@ -69,6 +74,7 @@ class Game extends Sprite
 		character2.update();
 		character.update();
 		rock.update();
+		rock2.update();
 		}
 	}
 }

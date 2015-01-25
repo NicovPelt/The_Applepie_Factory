@@ -78,6 +78,7 @@ class Terrain extends Sprite
 		for (gap in gaps) {
 			gap.update();
 		}
+		pillar.update();
 		particleSystem.particleSpawn_x -= speed ;
 		particleSystem.update();
 	}
