@@ -8,6 +8,8 @@ import openfl.events.Event;
 import flash.media.SoundChannel;
 import flash.media.SoundTransform;
 import openfl.Assets.loadSound;
+import openfl.events.KeyboardEvent;
+import openfl.ui.Keyboard;
 
 /**
  * ...
@@ -28,6 +30,7 @@ class Cutscene extends Sprite
 	
 	public var frameNr:Int = 0;
 	var main:Main;
+	var skip:Bool = false;
 	
 	public function new(main:Main) 
 	{
@@ -37,6 +40,7 @@ class Cutscene extends Sprite
 	}
 	function init(e:Event) {
 		nextFrame();
+		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 	}
 	
 	function nextFrame() {
@@ -48,7 +52,7 @@ class Cutscene extends Sprite
 		frame.height = stage.stageHeight;
 		addChild(frame);
 		frameNr++;
-		if(frameNr<21){
+		if(frameNr<21 && !skip){
 			Timer.delay(nextFrame, 500);
 		} else {
 			Timer.delay(done, 500);
@@ -56,6 +60,11 @@ class Cutscene extends Sprite
 	}
 	function done() {
 		main.startGame();
+	}
+	
+	function onKeyDown(event:KeyboardEvent) {
+		stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+		skip = true;
 	}
 	
 }
